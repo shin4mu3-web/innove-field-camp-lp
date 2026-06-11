@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>イノベ フィールド キャンプ｜学校の外で、未来を見つける。</title>
+<meta name="description" content="イノベ地域の企業・人・地域を取材し、高校生の視点で、動画・SNS・デザイン・提案にまとめるフィールド型クリエイティブプログラム。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --mint:#59C9D6;
+  --mint-light:#7DDDD2;
+  --mint-pale:#C9F3EF;
+  --green:#8FD85A;
+  --green-light:#C8F27A;
+  --green-pale:#E9FAD2;
+  --yellow:#FFF06A;
+  --orange:#FFB547;
+  --coral:#FF7A59;
+  --white:#FFFFFF;
+  --base:#F7FAFB;
+  --base2:#EEF7F8;
+  --ink:#1F3A40;
+  --ink-soft:#4A6A70;
+  --radius:20px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans JP',sans-serif;
+  color:var(--ink);
+  background:var(--base);
+  line-height:1.8;
+  overflow-x:hidden;
+}
+h1,h2,h3,.rounded{font-family:'M PLUS Rounded 1c','Noto Sans JP',sans-serif}
+.en{font-family:'Outfit','M PLUS Rounded 1c',sans-serif;letter-spacing:.06em}
+
+/* ===== 共通 ===== */
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+section{padding:88px 0}
+.sec-label{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:13px;font-weight:700;color:var(--mint);
+  text-transform:uppercase;letter-spacing:.18em;margin-bottom:14px;
+}
+.sec-label::before{content:"";width:28px;height:3px;border-radius:2px;background:var(--mint)}
+.sec-title{font-size:clamp(26px,4.4vw,40px);font-weight:800;line-height:1.4;margin-bottom:22px}
+.sec-lead{font-size:16px;color:var(--ink-soft);max-width:620px}
+.accent-mark{background:linear-gradient(transparent 62%,var(--yellow) 62%)}
+
+/* ===== ヘッダー ===== */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(247,250,251,.88);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(89,201,214,.18);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1080px;margin:0 auto;padding:0 24px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;text-decoration:none;color:var(--ink)}
+.logo-badge{
+  width:38px;height:38px;border-radius:12px;
+  background:linear-gradient(135deg,var(--mint),var(--green));
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:19px;flex-shrink:0;
+}
+.nav-links{display:flex;gap:26px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--ink-soft);font-size:14px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--mint)}
+.nav-cta{
+  background:var(--ink);color:#fff!important;padding:9px 20px;border-radius:999px;
+  font-weight:700!important;transition:transform .2s,background .2s;
+}
+.nav-cta:hover{background:var(--mint);transform:translateY(-1px)}
+@media(max-width:760px){.nav-links li:not(:last-child){display:none}}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;min-height:100svh;display:flex;align-items:center;
+  background:linear-gradient(160deg,var(--mint-pale) 0%,var(--base) 45%,var(--green-pale) 100%);
+  padding:120px 0 80px;overflow:hidden;
+}
+.hero-doodle{position:absolute;font-size:34px;opacity:.5;user-select:none;animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-14px) rotate(5deg)}}
+.hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;max-width:1080px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#fff;border:2px solid var(--mint);color:var(--mint);
+  font-size:13px;font-weight:700;padding:6px 16px;border-radius:999px;margin-bottom:22px;
+}
+.hero h1{font-size:clamp(34px,5.8vw,56px);font-weight:800;line-height:1.32;margin-bottom:18px}
+.hero h1 .line2{display:block}
+.hero-sub{font-size:clamp(15px,2vw,17px);color:var(--ink-soft);margin-bottom:32px;font-weight:500}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:15px 30px;border-radius:999px;font-weight:700;font-size:15px;
+  text-decoration:none;transition:transform .2s,box-shadow .2s;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(31,58,64,.16)}
+.btn-primary{background:var(--ink);color:#fff}
+.btn-secondary{background:#fff;color:var(--ink);border:2px solid var(--ink)}
+.hero-meta{display:flex;gap:20px;flex-wrap:wrap}
+.hero-meta div{font-size:13px;color:var(--ink-soft)}
+.hero-meta strong{display:block;font-size:14px;color:var(--ink)}
+
+.hero-visual{position:relative}
+.hero-card{
+  background:#fff;border-radius:28px;padding:14px;
+  box-shadow:0 24px 60px rgba(89,201,214,.28);
+  transform:rotate(2deg);
+}
+.hero-photo{
+  border-radius:20px;aspect-ratio:4/3;
+  background:linear-gradient(135deg,var(--mint) 0%,var(--mint-light) 45%,var(--green) 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  color:#fff;gap:10px;position:relative;overflow:hidden;
+}
+.hero-photo::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 75% 20%,rgba(255,255,255,.35),transparent 55%);
+}
+.hero-photo .cam{font-size:64px;z-index:1}
+.hero-photo .cap{font-weight:700;font-size:14px;letter-spacing:.1em;z-index:1}
+.hero-sticker{
+  position:absolute;background:#fff;border-radius:16px;padding:10px 16px;
+  box-shadow:0 10px 26px rgba(31,58,64,.14);font-weight:700;font-size:13px;
+  display:flex;align-items:center;gap:8px;
+}
+.st1{top:-16px;left:-22px;transform:rotate(-6deg)}
+.st2{bottom:24px;left:-30px;transform:rotate(4deg)}
+.st3{top:38%;right:-18px;transform:rotate(7deg);background:var(--yellow)}
+.scroll-cue{
+  position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
+  font-size:12px;color:var(--ink-soft);letter-spacing:.2em;text-align:center;
+}
+.scroll-cue::after{content:"";display:block;width:1px;height:34px;background:var(--ink-soft);margin:8px auto 0;animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{0%,100%{opacity:.2}50%{opacity:1}}
+@media(max-width:860px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-visual{max-width:420px;margin:0 auto}
+}
+
+/* ===== SECTION 02 ABOUT ===== */
+.about{background:#fff}
+.steps5{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:44px}
+.step5{
+  background:var(--base);border-radius:var(--radius);padding:26px 14px;text-align:center;
+  border:2px solid transparent;transition:border-color .25s,transform .25s;
+}
+.step5:hover{border-color:var(--mint);transform:translateY(-4px)}
+.step5 .ico{font-size:34px;margin-bottom:10px}
+.step5 .num{font-size:11px;font-weight:700;color:var(--mint);letter-spacing:.15em}
+.step5 h3{font-size:17px;font-weight:800;margin-top:4px}
+.step5 .arrow{display:none}
+@media(max-width:760px){
+  .steps5{grid-template-columns:repeat(2,1fr)}
+  .steps5 .step5:last-child{grid-column:1/-1}
+}
+
+/* ===== SECTION 03 PROGRAMS ===== */
+.programs{background:linear-gradient(180deg,var(--base) 0%,var(--base2) 100%)}
+.prog-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px}
+.prog-card{
+  background:#fff;border-radius:26px;padding:38px 32px;
+  box-shadow:0 8px 30px rgba(31,58,64,.07);
+  position:relative;overflow:hidden;
+}
+.prog-card::before{content:"";position:absolute;top:0;left:0;right:0;height:7px}
+.prog-media::before{background:linear-gradient(90deg,var(--mint),var(--mint-light))}
+.prog-solution::before{background:linear-gradient(90deg,var(--green),var(--green-light))}
+.prog-num{font-size:13px;font-weight:800;letter-spacing:.2em;margin-bottom:8px}
+.prog-media .prog-num{color:var(--mint)}
+.prog-solution .prog-num{color:#6FB53E}
+.prog-card h3{font-size:22px;font-weight:800;margin-bottom:6px}
+.prog-copy{font-size:15px;font-weight:700;margin-bottom:16px}
+.prog-media .prog-copy{color:var(--mint)}
+.prog-solution .prog-copy{color:#6FB53E}
+.prog-card p{font-size:14px;color:var(--ink-soft);margin-bottom:20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{
+  font-size:12.5px;font-weight:700;padding:7px 14px;border-radius:999px;
+}
+.prog-media .chip{background:var(--mint-pale);color:#22808D}
+.prog-solution .chip{background:var(--green-pale);color:#558A28}
+@media(max-width:760px){.prog-grid{grid-template-columns:1fr}}
+
+/* ===== SECTION 04 CHECK ===== */
+.check{background:#fff;position:relative;overflow:hidden}
+.check-doodle{position:absolute;font-size:46px;opacity:.12;user-select:none}
+.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:40px;position:relative;z-index:1}
+.check-item{
+  display:flex;align-items:center;gap:14px;
+  background:var(--base);border-radius:16px;padding:18px 22px;
+  font-weight:600;font-size:15px;transition:transform .2s,background .2s;
+}
+.check-item:hover{transform:translateX(4px);background:var(--mint-pale)}
+.check-box{
+  width:26px;height:26px;border-radius:8px;flex-shrink:0;
+  background:var(--mint);color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:15px;font-weight:800;
+}
+@media(max-width:760px){.check-grid{grid-template-columns:1fr}}
+
+/* ===== SECTION 05 FLOW ===== */
+.flow{background:linear-gradient(180deg,var(--base2),var(--base))}
+.timeline{position:relative;margin-top:48px;padding-left:36px}
+.timeline::before{
+  content:"";position:absolute;left:11px;top:8px;bottom:8px;width:3px;
+  background:linear-gradient(180deg,var(--mint),var(--green));border-radius:3px;
+}
+.tl-item{position:relative;padding-bottom:36px}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{
+  position:absolute;left:-36px;top:4px;width:25px;height:25px;border-radius:50%;
+  background:#fff;border:5px solid var(--mint);
+}
+.tl-item:nth-child(3) .tl-dot,.tl-item:nth-child(4) .tl-dot{border-color:var(--mint-light)}
+.tl-item:nth-child(5) .tl-dot{border-color:var(--green)}
+.tl-step{font-size:12px;font-weight:800;letter-spacing:.2em;color:var(--mint)}
+.tl-item h3{font-size:19px;font-weight:800;margin:2px 0 6px}
+.tl-item p{font-size:14px;color:var(--ink-soft);max-width:560px}
+.tl-ico{font-size:22px;margin-right:6px}
+
+/* ===== SECTION 06 FIELD ===== */
+.field{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.field .sec-label{color:var(--mint-light)}
+.field .sec-label::before{background:var(--mint-light)}
+.field .sec-lead{color:rgba(255,255,255,.75)}
+.field-map{
+  margin-top:48px;border-radius:26px;
+  background:linear-gradient(135deg,rgba(89,201,214,.18),rgba(143,216,90,.14));
+  border:1px solid rgba(255,255,255,.15);
+  padding:44px 32px;position:relative;min-height:300px;
+}
+.pin{
+  position:absolute;display:flex;align-items:center;gap:8px;
+  background:#fff;color:var(--ink);font-size:13px;font-weight:700;
+  padding:8px 16px;border-radius:999px;box-shadow:0 8px 22px rgba(0,0,0,.25);
+  white-space:nowrap;animation:float 5s ease-in-out infinite;
+}
+.pin .dot{width:9px;height:9px;border-radius:50%;background:var(--coral)}
+.pin1{top:14%;left:8%}
+.pin2{top:24%;right:12%;animation-delay:.7s}
+.pin3{top:52%;left:22%;animation-delay:1.4s}
+.pin4{bottom:18%;right:24%;animation-delay:2.1s}
+.pin5{bottom:10%;left:9%;animation-delay:2.8s}
+.field-center{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  text-align:center;
+}
+.field-center .big{font-size:clamp(26px,4vw,40px);font-weight:800;letter-spacing:.08em}
+.field-center .small{font-size:13px;color:rgba(255,255,255,.6);letter-spacing:.3em;margin-top:4px}
+@media(max-width:760px){
+  .field-map{min-height:420px}
+  .pin{font-size:11px;padding:6px 12px}
+}
+
+/* ===== SECTION 07 OUTPUT ===== */
+.output{background:#fff}
+.mock-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+.mock{
+  border-radius:20px;padding:26px 18px;text-align:center;
+  transition:transform .25s;
+}
+.mock:hover{transform:translateY(-6px) rotate(-1deg)}
+.mock:nth-child(1){background:var(--mint-pale)}
+.mock:nth-child(2){background:var(--green-pale)}
+.mock:nth-child(3){background:#FFF6D9}
+.mock:nth-child(4){background:#FFE9E0}
+.mock .ico{font-size:42px;margin-bottom:12px}
+.mock h3{font-size:15px;font-weight:800}
+.mock p{font-size:12.5px;color:var(--ink-soft);margin-top:4px}
+@media(max-width:760px){.mock-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ===== SECTION 08 ARCHIVE ===== */
+.archive{background:linear-gradient(180deg,var(--base),var(--base2))}
+.arch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.arch-card{
+  background:#fff;border-radius:20px;overflow:hidden;
+  box-shadow:0 6px 22px rgba(31,58,64,.07);
+  transition:transform .25s,box-shadow .25s;cursor:pointer;
+}
+.arch-card:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(31,58,64,.13)}
+.arch-thumb{
+  aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;font-size:46px;
+}
+.arch-card:nth-child(1) .arch-thumb{background:linear-gradient(135deg,var(--mint-pale),var(--mint-light))}
+.arch-card:nth-child(2) .arch-thumb{background:linear-gradient(135deg,var(--green-pale),var(--green-light))}
+.arch-card:nth-child(3) .arch-thumb{background:linear-gradient(135deg,#FFF6D9,var(--orange))}
+.arch-body{padding:20px 22px}
+.arch-date{font-size:12px;font-weight:700;color:var(--mint);letter-spacing:.08em}
+.arch-body h3{font-size:16px;font-weight:800;margin:6px 0 4px;line-height:1.5}
+.arch-body p{font-size:13px;color:var(--ink-soft)}
+.arch-tag{
+  display:inline-block;font-size:11px;font-weight:700;
+  background:var(--base2);color:var(--ink-soft);
+  padding:4px 12px;border-radius:999px;margin-top:12px;
+}
+.arch-note{
+  text-align:center;margin-top:36px;font-size:13px;color:var(--ink-soft);
+}
+@media(max-width:760px){.arch-grid{grid-template-columns:1fr}}
+
+/* ===== SECTION 09 MENTOR ===== */
+.mentor{background:#fff}
+.mentor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.mentor-card{
+  background:var(--base);border-radius:22px;padding:34px 26px;text-align:center;
+  border:2px solid transparent;transition:border-color .25s;
+}
+.mentor-card:hover{border-color:var(--mint)}
+.mentor-avatar{
+  width:84px;height:84px;border-radius:50%;margin:0 auto 16px;
+  display:flex;align-items:center;justify-content:center;font-size:38px;
+}
+.mentor-card:nth-child(1) .mentor-avatar{background:var(--mint-pale)}
+.mentor-card:nth-child(2) .mentor-avatar{background:var(--green-pale)}
+.mentor-card:nth-child(3) .mentor-avatar{background:#FFF6D9}
+.mentor-card h3{font-size:17px;font-weight:800;margin-bottom:8px}
+.mentor-card p{font-size:13.5px;color:var(--ink-soft)}
+@media(max-width:760px){.mentor-grid{grid-template-columns:1fr}}
+
+/* ===== SECTION 10 SCHEDULE ===== */
+.schedule{background:linear-gradient(180deg,var(--base2),var(--base))}
+.sch-track{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin-top:44px}
+.sch-item{
+  background:#fff;border-radius:16px;padding:20px 10px;text-align:center;
+  box-shadow:0 4px 14px rgba(31,58,64,.06);
+}
+.sch-item .ico{font-size:26px;margin-bottom:8px}
+.sch-item h3{font-size:12.5px;font-weight:800;line-height:1.5}
+.sch-item .when{font-size:11px;color:var(--ink-soft);margin-top:4px;font-weight:600}
+@media(max-width:860px){.sch-track{grid-template-columns:repeat(2,1fr)}.sch-track .sch-item:last-child{grid-column:1/-1}}
+
+/* ===== SECTION 11 FAQ ===== */
+.faq{background:#fff}
+.faq-list{margin-top:40px;max-width:760px}
+.faq-item{
+  border:2px solid var(--base2);border-radius:18px;margin-bottom:14px;overflow:hidden;
+  transition:border-color .25s;
+}
+.faq-item[open]{border-color:var(--mint)}
+.faq-item summary{
+  list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;
+  padding:20px 24px;font-weight:700;font-size:15px;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-q{
+  width:30px;height:30px;border-radius:10px;flex-shrink:0;
+  background:var(--mint);color:#fff;display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:14px;
+}
+.faq-a{padding:0 24px 22px 68px;font-size:14px;color:var(--ink-soft)}
+
+/* ===== CTA / FOOTER ===== */
+.bottom-cta{
+  background:linear-gradient(135deg,var(--mint) 0%,var(--green) 100%);
+  color:#fff;text-align:center;padding:80px 24px;
+}
+.bottom-cta h2{font-size:clamp(24px,4vw,36px);font-weight:800;margin-bottom:14px}
+.bottom-cta p{font-size:15px;opacity:.9;margin-bottom:32px}
+.bottom-cta .btn{background:#fff;color:var(--ink)}
+footer{background:var(--ink);color:rgba(255,255,255,.66);padding:44px 24px;text-align:center;font-size:13px}
+footer .foot-logo{font-weight:800;color:#fff;font-size:16px;margin-bottom:10px}
+
+/* ===== モバイル固定ボタン ===== */
+.fixed-cta{
+  position:fixed;bottom:16px;left:16px;right:16px;z-index:90;display:none;
+}
+.fixed-cta a{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--ink);color:#fff;font-weight:800;font-size:15px;
+  padding:16px;border-radius:999px;text-decoration:none;
+  box-shadow:0 12px 30px rgba(31,58,64,.35);
+}
+@media(max-width:760px){
+  .fixed-cta{display:block}
+  section{padding:64px 0}
+  body{padding-bottom:76px}
+}
+
+/* ===== reveal ===== */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.on{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="logo"><span class="logo-badge">⛺</span>イノベ フィールド キャンプ</a>
+    <ul class="nav-links">
+      <li><a href="#about">プログラム</a></li>
+      <li><a href="#flow">活動の流れ</a></li>
+      <li><a href="#archive">活動記録</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#archive" class="nav-cta">活動記録を見る</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- SECTION 01: HERO -->
+<section class="hero" id="top">
+  <span class="hero-doodle" style="top:12%;left:5%">📷</span>
+  <span class="hero-doodle" style="top:20%;right:8%;animation-delay:1s">💡</span>
+  <span class="hero-doodle" style="bottom:22%;left:10%;animation-delay:2s">💬</span>
+  <span class="hero-doodle" style="bottom:14%;right:14%;animation-delay:.5s">📍</span>
+
+  <div class="hero-inner">
+    <div>
+      <span class="hero-tag">⛺ INNOVE FIELD CAMP</span>
+      <h1>学校の外で、<span class="line2"><span class="accent-mark">未来を見つける。</span></span></h1>
+      <p class="hero-sub">浜通りの企業・人・地域を取材し、<br>高校生の視点で、未来を発信するプロジェクト。</p>
+      <div class="hero-ctas">
+        <a href="#about" class="btn btn-primary">プログラムを見る →</a>
+        <a href="#archive" class="btn btn-secondary">活動記録を見る</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>対象</strong>福島県内の高校生</div>
+        <div><strong>活動内容</strong>取材／動画制作／課題解決／成果発表</div>
+        <div><strong>期間</strong>調整中</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-photo">
+          <span class="cam">📸</span>
+          <span class="cap">FIELD × CREATIVE</span>
+        </div>
+      </div>
+      <span class="hero-sticker st1">🎬 動画制作</span>
+      <span class="hero-sticker st2">🗺️ フィールドワーク</span>
+      <span class="hero-sticker st3">✨ 高校生の挑戦</span>
+    </div>
+  </div>
+  <div class="scroll-cue en">SCROLL</div>
+</section>
+
+<!-- SECTION 02: ABOUT -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="sec-label en">What's INNOVE FIELD CAMP?</span>
+      <h2 class="sec-title">イノベ フィールド キャンプとは？</h2>
+      <p class="sec-lead">
+        イノベ地域をフィールドに、高校生が現地を訪れ、企業・地域事業者・地域で挑戦する人たちと出会い、自分たちの視点で地域の魅力や課題を発信するプログラムです。<br><br>
+        単なる見学ではなく、<strong>「知る」「聞く」「考える」「つくる」「届ける」</strong>までを体験します。
+      </p>
+    </div>
+    <div class="steps5 reveal">
+      <div class="step5"><div class="ico">🔍</div><div class="num en">STEP 1</div><h3>知る</h3></div>
+      <div class="step5"><div class="ico">🤝</div><div class="num en">STEP 2</div><h3>出会う</h3></div>
+      <div class="step5"><div class="ico">💭</div><div class="num en">STEP 3</div><h3>考える</h3></div>
+      <div class="step5"><div class="ico">🛠️</div><div class="num en">STEP 4</div><h3>つくる</h3></div>
+      <div class="step5"><div class="ico">📣</div><div class="num en">STEP 5</div><h3>届ける</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 03: PROGRAMS -->
+<section class="programs">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="sec-label en">2 Programs</span>
+      <h2 class="sec-title">選べる、または連動する<br>2つのチャレンジ。</h2>
+    </div>
+    <div class="prog-grid">
+      <div class="prog-card prog-media reveal">
+        <div class="prog-num en">PROGRAM 01</div>
+        <h3>広報コンテンツ制作プログラム</h3>
+        <p class="prog-copy">見つけた魅力を、伝わるカタチに。</p>
+        <p>現地取材やインタビューを通じて、イノベ地域の企業・人・仕事・未来を取材し、動画、SNS投稿、ポスター、記事などの広報コンテンツを制作します。</p>
+        <div class="chips">
+          <span class="chip">🎬 動画制作</span>
+          <span class="chip">📷 写真撮影</span>
+          <span class="chip">🎤 インタビュー</span>
+          <span class="chip">📱 SNS投稿</span>
+          <span class="chip">🎨 ポスター制作</span>
+          <span class="chip">✍️ 記事制作</span>
+        </div>
+      </div>
+      <div class="prog-card prog-solution reveal">
+        <div class="prog-num en">PROGRAM 02</div>
+        <h3>課題解決力育成プログラム</h3>
+        <p class="prog-copy">地域のリアルな課題に、高校生の視点で挑む。</p>
+        <p>浜通り地域の課題や可能性を学び、地域で活動する人たちの声を聞きながら、課題を整理し、解決アイデアを提案します。</p>
+        <div class="chips">
+          <span class="chip">🔎 地域課題の発見</span>
+          <span class="chip">💡 アイデアづくり</span>
+          <span class="chip">📝 企画書作成</span>
+          <span class="chip">💬 チームディスカッション</span>
+          <span class="chip">👀 メンターレビュー</span>
+          <span class="chip">🎤 成果発表</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 04: CHECK -->
+<section class="check">
+  <span class="check-doodle" style="top:8%;right:6%">💭</span>
+  <span class="check-doodle" style="bottom:10%;left:4%">⭐</span>
+  <div class="wrap">
+    <div class="reveal">
+      <span class="sec-label en">For You</span>
+      <h2 class="sec-title">ひとつでも当てはまったら、<br>この活動はきっと面白い。</h2>
+    </div>
+    <div class="check-grid reveal">
+      <div class="check-item"><span class="check-box">✓</span>学校ではできない体験をしてみたい</div>
+      <div class="check-item"><span class="check-box">✓</span>人と違うことにチャレンジしたい</div>
+      <div class="check-item"><span class="check-box">✓</span>SNS、映像、デザインに興味がある</div>
+      <div class="check-item"><span class="check-box">✓</span>地域や社会課題について考えてみたい</div>
+      <div class="check-item"><span class="check-box">✓</span>将来の進路や仕事について視野を広げたい</div>
+      <div class="check-item"><span class="check-box">✓</span>新しい仲間と出会いたい</div>
+      <div class="check-item"><span class="check-box">✓</span>自分の考えを発信できるようになりたい</div>
+      <div class="check-item"><span class="check-box">✓</span>同級生より一歩先の経験をしてみたい</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 05: FLOW -->
+<section class="flow" id="flow">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="sec-label en">Flow</span>
+      <h2 class="sec-title">活動の流れ</h2>
+    </div>
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <span class="tl-dot"></span>
+        <div class="tl-step en">STEP 01</div>
+        <h3><span class="tl-ico">🚀</span>キックオフ</h3>
+        <p>イノベ構想やプログラムの目的を学び、チームごとに活動テーマを確認。</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-dot"></span>
+        <div class="tl-step en">STEP 02</div>
+        <h3><span class="tl-ico">🗺️</span>現地フィールドワーク</h3>
+        <p>浜通り地域を訪問し、企業・地域事業者・地域で活動する人を取材。</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-dot"></span>
+        <div class="tl-step en">STEP 03</div>
+        <h3><span class="tl-ico">🛠️</span>企画・制作ワーク</h3>
+        <p>取材内容をもとに、動画・記事・ポスター・課題解決提案を制作。</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-dot"></span>
+        <div class="tl-step en">STEP 04</div>
+        <h3><span class="tl-ico">👀</span>中間レビュー</h3>
+        <p>メンターや関係者からフィードバックを受け、内容をブラッシュアップ。</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-dot"></span>
+        <div class="tl-step en">STEP 05</div>
+        <h3><span class="tl-ico">🎤</span>成果発表</h3>
+        <p>制作物や提案内容を発表し、WebやSNS等で成果を発信。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 06: FIELD -->
+<section class="field">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="sec-label en">Field Work</span>
+      <h2 class="sec-title">フィールドは、浜通り。</h2>
+      <p class="sec-lead">
+        ロボット、ドローン、エネルギー、農林水産業、まちづくり、起業。イノベ地域には、これからの福島をつくる現場があります。<br><br>
+        現地でしか聞けない話、会ってみないと分からない仕事、高校生だからこそ見つけられる視点を、自分たちの言葉で記録していきます。
+      </p>
+    </div>
+    <div class="field-map reveal">
+      <span class="pin pin1"><span class="dot"></span>🏭 企業</span>
+      <span class="pin pin2"><span class="dot"></span>🛸 研究・技術拠点</span>
+      <span class="pin pin3"><span class="dot"></span>🌾 地域事業者</span>
+      <span class="pin pin4"><span class="dot"></span>🚀 起業家</span>
+      <span class="pin pin5"><span class="dot"></span>🏘️ 地域コミュニティ</span>
+      <div class="field-center">
+        <div class="big en">HAMADORI</div>
+        <div class="small en">FUKUSHIMA · INNOVATION COAST</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 07: OUTPUT -->
+<section class="output">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="sec-label en">Output</span>
+      <h2 class="sec-title">最後は、社会に届ける。</h2>
+      <p class="sec-lead">活動の成果は、発表会やWeb、SNS等を通じて発信します。高校生の視点で見つけた地域の魅力や課題を、同世代、保護者、学校、地域の人たちへ届けます。</p>
+    </div>
+    <div class="mock-grid reveal">
+      <div class="mock"><div class="ico">📱</div><h3>ショート動画</h3><p>SNS投稿・リール</p></div>
+      <div class="mock"><div class="ico">📰</div><h3>インタビュー記事</h3><p>Web掲載記事</p></div>
+      <div class="mock"><div class="ico">🖼️</div><h3>ポスター</h3><p>デザイン制作物</p></div>
+      <div class="mock"><div class="ico">💡</div><h3>課題解決アイデア</h3><p>提案・発表資料</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 08: ARCHIVE -->
+<section class="archive" id="archive">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="sec-label en">Activity Archive</span>
+      <h2 class="sec-title">活動の記録を、未来へ残す。</h2>
+      <p class="sec-lead">フィールドワークの様子や参加者の声、制作過程、成果発表まで、活動の軌跡をアーカイブとして掲載します。参加者自身が振り返ることができるだけでなく、次年度以降の参加者や地域の人たちにも、プロジェクトの価値を伝えていきます。</p>
+    </div>
+    <div class="arch-grid reveal">
+      <div class="arch-card">
+        <div class="arch-thumb">🗺️</div>
+        <div class="arch-body">
+          <div class="arch-date en">COMING SOON</div>
+          <h3>フィールドワークレポート</h3>
+          <p>浜通り現地視察の様子をレポート形式で掲載予定。</p>
+          <span class="arch-tag">活動レポート</span>
+        </div>
+      </div>
+      <div class="arch-card">
+        <div class="arch-thumb">🎬</div>
+        <div class="arch-body">
+          <div class="arch-date en">COMING SOON</div>
+          <h3>制作の裏側</h3>
+          <p>動画・ポスター・記事ができるまでの制作過程を紹介予定。</p>
+          <span class="arch-tag">制作ストーリー</span>
+        </div>
+      </div>
+      <div class="arch-card">
+        <div class="arch-thumb">🎤</div>
+        <div class="arch-body">
+          <div class="arch-date en">COMING SOON</div>
+          <h3>成果発表ダイジェスト</h3>
+          <p>成果発表会のハイライトと参加者インタビューを掲載予定。</p>
+          <span class="arch-tag">成果アーカイブ</span>
+        </div>
+      </div>
+    </div>
+    <p class="arch-note">※ 活動記録はプログラム開始後、順次公開していきます。年度別アーカイブとして蓄積されます。</p>
+  </div>
+</section>
+
+<!-- SECTION 09: MENTOR -->
+<section class="mentor">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="sec-label en">Mentor / Support</span>
+      <h2 class="sec-title">プロと一緒に、考えて、つくる。</h2>
+      <p class="sec-lead">地域や事業づくりに詳しいメンター、動画・デザイン・広報の専門スタッフが、高校生の活動をサポートします。「何を伝えるか」から、「どう見せるか」まで、チームで一緒に考えていきます。</p>
+    </div>
+    <div class="mentor-grid reveal">
+      <div class="mentor-card">
+        <div class="mentor-avatar">🧭</div>
+        <h3>地域伴走メンター</h3>
+        <p>浜通りで活動する起業家・地域プレイヤーが、課題発見から提案まで伴走します。</p>
+      </div>
+      <div class="mentor-card">
+        <div class="mentor-avatar">🎬</div>
+        <h3>制作メンター</h3>
+        <p>映像・デザイン・写真のプロクリエイターが、制作の基礎から表現まで指導します。</p>
+      </div>
+      <div class="mentor-card">
+        <div class="mentor-avatar">📣</div>
+        <h3>広報メンター</h3>
+        <p>広告・SNS運用の専門スタッフが、「届く発信」のつくり方をサポートします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 10: SCHEDULE -->
+<section class="schedule">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="sec-label en">Schedule</span>
+      <h2 class="sec-title">スケジュール</h2>
+    </div>
+    <div class="sch-track reveal">
+      <div class="sch-item"><div class="ico">🚀</div><h3>キックオフ</h3><div class="when">予定</div></div>
+      <div class="sch-item"><div class="ico">🗺️</div><h3>現地フィールドワーク</h3><div class="when">調整中</div></div>
+      <div class="sch-item"><div class="ico">🛠️</div><h3>制作ワーク</h3><div class="when">予定</div></div>
+      <div class="sch-item"><div class="ico">👀</div><h3>中間レビュー</h3><div class="when">予定</div></div>
+      <div class="sch-item"><div class="ico">🎤</div><h3>成果発表会</h3><div class="when">予定</div></div>
+      <div class="sch-item"><div class="ico">🌐</div><h3>成果公開</h3><div class="when">予定</div></div>
+      <div class="sch-item"><div class="ico">📚</div><h3>活動記録公開</h3><div class="when">順次</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 11: FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="sec-label en">FAQ</span>
+      <h2 class="sec-title">よくある質問</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary><span class="faq-q">Q</span>動画やデザインの経験がなくても参加できますか？</summary>
+        <div class="faq-a">参加できます。専門スタッフが基礎からサポートします。</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Q</span>友達と一緒に活動できますか？</summary>
+        <div class="faq-a">チーム編成や活動内容に応じて調整します。</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Q</span>現地活動の交通手段はどうなりますか？</summary>
+        <div class="faq-a">事務局側で調整予定です。詳細は参加決定後にご案内します。</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Q</span>成果物はどこで公開されますか？</summary>
+        <div class="faq-a">Web、SNS、成果発表会等で公開予定です。</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-q">Q</span>活動記録は後から見ることができますか？</summary>
+        <div class="faq-a">活動レポートや成果アーカイブとして掲載予定です。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <h2>未来は、教室の外にある。</h2>
+  <p>イノベ フィールド キャンプの活動の軌跡を、これから記録していきます。</p>
+  <a href="#archive" class="btn">活動記録を見る →</a>
+</section>
+
+<footer>
+  <div class="foot-logo">⛺ イノベ フィールド キャンプ</div>
+  <p>地域若年層によるイノベ構想理解促進に向けた広報コンテンツ制作・課題解決力育成支援業務</p>
+  <p style="margin-top:8px;opacity:.6">© INNOVE FIELD CAMP</p>
+</footer>
+
+<!-- モバイル固定CTA -->
+<div class="fixed-cta">
+  <a href="#archive">📚 活動記録を見る</a>
+</div>
+
+<script>
+// スクロールリビール
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
