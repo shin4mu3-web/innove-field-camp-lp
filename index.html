@@ -10,696 +10,692 @@
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --mint:#59C9D6;
-  --mint-light:#7DDDD2;
-  --mint-pale:#C9F3EF;
+  --teal:#3BB8C7;
+  --teal-deep:#1E9AAB;
+  --teal-light:#7DDDD2;
+  --teal-pale:#D9F3F2;
   --green:#8FD85A;
-  --green-light:#C8F27A;
-  --green-pale:#E9FAD2;
-  --yellow:#FFF06A;
+  --green-deep:#6FB53E;
+  --green-pale:#EAF8DC;
+  --yellow:#FFE95C;
   --orange:#FFB547;
   --coral:#FF7A59;
   --white:#FFFFFF;
-  --base:#F7FAFB;
-  --base2:#EEF7F8;
-  --ink:#1F3A40;
-  --ink-soft:#4A6A70;
+  --base:#F7FBFC;
+  --base2:#EDF6F7;
+  --ink:#22454C;
+  --ink-soft:#54737A;
   --radius:20px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  font-family:'Noto Sans JP',sans-serif;
-  color:var(--ink);
-  background:var(--base);
-  line-height:1.8;
-  overflow-x:hidden;
+  font-family:'Noto Sans JP',sans-serif;color:var(--ink);
+  background:var(--base);line-height:1.85;overflow-x:hidden;
 }
 h1,h2,h3,.rounded{font-family:'M PLUS Rounded 1c','Noto Sans JP',sans-serif}
 .en{font-family:'Outfit','M PLUS Rounded 1c',sans-serif;letter-spacing:.06em}
+img{max-width:100%;display:block}
 
-/* ===== 共通 ===== */
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-section{padding:88px 0}
-.sec-label{
-  display:inline-flex;align-items:center;gap:10px;
-  font-size:13px;font-weight:700;color:var(--mint);
-  text-transform:uppercase;letter-spacing:.18em;margin-bottom:14px;
-}
-.sec-label::before{content:"";width:28px;height:3px;border-radius:2px;background:var(--mint)}
-.sec-title{font-size:clamp(26px,4.4vw,40px);font-weight:800;line-height:1.4;margin-bottom:22px}
-.sec-lead{font-size:16px;color:var(--ink-soft);max-width:620px}
-.accent-mark{background:linear-gradient(transparent 62%,var(--yellow) 62%)}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+section{padding:84px 0}
+.sec-title{font-size:clamp(24px,4vw,36px);font-weight:800;line-height:1.45;margin-bottom:18px}
+.sec-title .tealed{color:var(--teal-deep)}
+.sec-lead{font-size:15.5px;color:var(--ink-soft);max-width:640px}
+.accent-mark{background:linear-gradient(transparent 60%,var(--yellow) 60%)}
 
 /* ===== ヘッダー ===== */
 header{
   position:fixed;top:0;left:0;right:0;z-index:100;
-  background:rgba(247,250,251,.88);backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(89,201,214,.18);
+  background:rgba(247,251,252,.9);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(59,184,199,.16);
 }
-.nav{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1080px;margin:0 auto;padding:0 24px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;text-decoration:none;color:var(--ink)}
-.logo-badge{
-  width:38px;height:38px;border-radius:12px;
-  background:linear-gradient(135deg,var(--mint),var(--green));
-  display:flex;align-items:center;justify-content:center;
-  color:#fff;font-size:19px;flex-shrink:0;
-}
-.nav-links{display:flex;gap:26px;list-style:none}
-.nav-links a{text-decoration:none;color:var(--ink-soft);font-size:14px;font-weight:500;transition:color .2s}
-.nav-links a:hover{color:var(--mint)}
-.nav-cta{
-  background:var(--ink);color:#fff!important;padding:9px 20px;border-radius:999px;
-  font-weight:700!important;transition:transform .2s,background .2s;
-}
-.nav-cta:hover{background:var(--mint);transform:translateY(-1px)}
-@media(max-width:760px){.nav-links li:not(:last-child){display:none}}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px;max-width:1180px;margin:0 auto;padding:0 22px}
+.logo-link img{height:46px;width:auto}
+.nav-links{display:flex;gap:20px;list-style:none;align-items:center}
+.nav-links a{text-decoration:none;color:var(--ink);font-size:13.5px;font-weight:700;transition:color .2s}
+.nav-links a:hover{color:var(--teal-deep)}
+@media(max-width:900px){.nav-links{display:none}}
 
 /* ===== HERO ===== */
 .hero{
-  position:relative;min-height:100svh;display:flex;align-items:center;
-  background:linear-gradient(160deg,var(--mint-pale) 0%,var(--base) 45%,var(--green-pale) 100%);
-  padding:120px 0 80px;overflow:hidden;
+  position:relative;padding:120px 0 70px;overflow:hidden;
+  background:
+    radial-gradient(ellipse 700px 480px at 88% 8%,rgba(125,221,210,.4),transparent 60%),
+    radial-gradient(ellipse 600px 420px at 4% 92%,rgba(143,216,90,.22),transparent 60%),
+    linear-gradient(165deg,#EFFAFB 0%,var(--base) 55%,#F2FAEC 100%);
 }
-.hero-doodle{position:absolute;font-size:34px;opacity:.5;user-select:none;animation:float 6s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-14px) rotate(5deg)}}
-.hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;max-width:1080px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
-.hero-tag{
-  display:inline-flex;align-items:center;gap:8px;
-  background:#fff;border:2px solid var(--mint);color:var(--mint);
-  font-size:13px;font-weight:700;padding:6px 16px;border-radius:999px;margin-bottom:22px;
+.hero-doodle{position:absolute;opacity:.55;user-select:none;animation:float 6s ease-in-out infinite;z-index:1}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-12px) rotate(4deg)}}
+.hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
+.hero-logo{width:min(320px,70%);margin-bottom:18px}
+.hero-tagline{font-size:14px;font-weight:800;color:var(--teal-deep);letter-spacing:.05em;margin-bottom:10px}
+.hero h1{font-size:clamp(34px,5.6vw,54px);font-weight:800;line-height:1.36;margin-bottom:16px}
+.hero h1 .tealed{color:var(--teal-deep)}
+.hero-sub{font-size:15px;color:var(--ink-soft);margin-bottom:26px;font-weight:500}
+.hero-chips{display:flex;gap:12px;flex-wrap:wrap}
+.hero-chip{
+  background:#fff;border:2px dashed var(--teal);border-radius:16px;
+  padding:12px 18px;min-width:140px;
 }
-.hero h1{font-size:clamp(34px,5.8vw,56px);font-weight:800;line-height:1.32;margin-bottom:18px}
-.hero h1 .line2{display:block}
-.hero-sub{font-size:clamp(15px,2vw,17px);color:var(--ink-soft);margin-bottom:32px;font-weight:500}
-.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
-.btn{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:15px 30px;border-radius:999px;font-weight:700;font-size:15px;
-  text-decoration:none;transition:transform .2s,box-shadow .2s;
-}
-.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(31,58,64,.16)}
-.btn-primary{background:var(--ink);color:#fff}
-.btn-secondary{background:#fff;color:var(--ink);border:2px solid var(--ink)}
-.hero-meta{display:flex;gap:20px;flex-wrap:wrap}
-.hero-meta div{font-size:13px;color:var(--ink-soft)}
-.hero-meta strong{display:block;font-size:14px;color:var(--ink)}
+.hero-chip .k{font-size:11px;font-weight:800;color:var(--teal-deep);display:flex;align-items:center;gap:6px}
+.hero-chip .v{font-size:13px;font-weight:700;margin-top:2px}
 
 .hero-visual{position:relative}
-.hero-card{
-  background:#fff;border-radius:28px;padding:14px;
-  box-shadow:0 24px 60px rgba(89,201,214,.28);
-  transform:rotate(2deg);
+.hero-blob{
+  position:relative;border-radius:38% 62% 55% 45%/45% 42% 58% 55%;
+  overflow:hidden;aspect-ratio:1/0.92;
+  box-shadow:0 26px 60px rgba(59,184,199,.3);
 }
-.hero-photo{
-  border-radius:20px;aspect-ratio:4/3;
-  background:linear-gradient(135deg,var(--mint) 0%,var(--mint-light) 45%,var(--green) 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  color:#fff;gap:10px;position:relative;overflow:hidden;
+.hero-blob svg{width:100%;height:100%;display:block}
+.hero-banner{
+  position:absolute;bottom:6px;left:-26px;
+  background:var(--yellow);color:var(--ink);
+  font-family:'M PLUS Rounded 1c',sans-serif;font-weight:800;
+  font-size:clamp(15px,2.2vw,21px);padding:12px 24px;border-radius:8px;
+  transform:rotate(-3deg);box-shadow:0 10px 26px rgba(34,69,76,.18);
+  white-space:nowrap;
 }
-.hero-photo::after{
-  content:"";position:absolute;inset:0;
-  background:radial-gradient(circle at 75% 20%,rgba(255,255,255,.35),transparent 55%);
-}
-.hero-photo .cam{font-size:64px;z-index:1}
-.hero-photo .cap{font-weight:700;font-size:14px;letter-spacing:.1em;z-index:1}
-.hero-sticker{
-  position:absolute;background:#fff;border-radius:16px;padding:10px 16px;
-  box-shadow:0 10px 26px rgba(31,58,64,.14);font-weight:700;font-size:13px;
-  display:flex;align-items:center;gap:8px;
-}
-.st1{top:-16px;left:-22px;transform:rotate(-6deg)}
-.st2{bottom:24px;left:-30px;transform:rotate(4deg)}
-.st3{top:38%;right:-18px;transform:rotate(7deg);background:var(--yellow)}
-.scroll-cue{
-  position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
-  font-size:12px;color:var(--ink-soft);letter-spacing:.2em;text-align:center;
-}
-.scroll-cue::after{content:"";display:block;width:1px;height:34px;background:var(--ink-soft);margin:8px auto 0;animation:cue 1.8s ease-in-out infinite}
-@keyframes cue{0%,100%{opacity:.2}50%{opacity:1}}
-@media(max-width:860px){
+@media(max-width:880px){
   .hero-inner{grid-template-columns:1fr}
-  .hero-visual{max-width:420px;margin:0 auto}
+  .hero-visual{max-width:440px;margin:18px auto 0}
+  .hero-banner{left:0;font-size:14px}
 }
 
-/* ===== SECTION 02 ABOUT ===== */
-.about{background:#fff}
-.steps5{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:44px}
-.step5{
-  background:var(--base);border-radius:var(--radius);padding:26px 14px;text-align:center;
-  border:2px solid transparent;transition:border-color .25s,transform .25s;
-}
-.step5:hover{border-color:var(--mint);transform:translateY(-4px)}
-.step5 .ico{font-size:34px;margin-bottom:10px}
-.step5 .num{font-size:11px;font-weight:700;color:var(--mint);letter-spacing:.15em}
-.step5 h3{font-size:17px;font-weight:800;margin-top:4px}
-.step5 .arrow{display:none}
-@media(max-width:760px){
-  .steps5{grid-template-columns:repeat(2,1fr)}
-  .steps5 .step5:last-child{grid-column:1/-1}
-}
-
-/* ===== SECTION 03 PROGRAMS ===== */
-.programs{background:linear-gradient(180deg,var(--base) 0%,var(--base2) 100%)}
-.prog-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px}
+/* ===== 2プログラム ===== */
+.programs{background:#fff}
+.prog-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:40px}
 .prog-card{
-  background:#fff;border-radius:26px;padding:38px 32px;
-  box-shadow:0 8px 30px rgba(31,58,64,.07);
-  position:relative;overflow:hidden;
+  border-radius:24px;overflow:hidden;background:var(--base);
+  box-shadow:0 8px 28px rgba(34,69,76,.08);
+  display:flex;flex-direction:column;
 }
-.prog-card::before{content:"";position:absolute;top:0;left:0;right:0;height:7px}
-.prog-media::before{background:linear-gradient(90deg,var(--mint),var(--mint-light))}
-.prog-solution::before{background:linear-gradient(90deg,var(--green),var(--green-light))}
-.prog-num{font-size:13px;font-weight:800;letter-spacing:.2em;margin-bottom:8px}
-.prog-media .prog-num{color:var(--mint)}
-.prog-solution .prog-num{color:#6FB53E}
-.prog-card h3{font-size:22px;font-weight:800;margin-bottom:6px}
-.prog-copy{font-size:15px;font-weight:700;margin-bottom:16px}
-.prog-media .prog-copy{color:var(--mint)}
-.prog-solution .prog-copy{color:#6FB53E}
-.prog-card p{font-size:14px;color:var(--ink-soft);margin-bottom:20px}
+.prog-visual{aspect-ratio:16/8.5;overflow:hidden}
+.prog-visual svg{width:100%;height:100%;display:block}
+.prog-body{padding:28px 28px 32px}
+.prog-num{
+  display:inline-block;font-size:13px;font-weight:800;letter-spacing:.16em;
+  padding:3px 14px;border-radius:999px;color:#fff;margin-bottom:10px;
+}
+.prog-media .prog-num{background:var(--teal)}
+.prog-solution .prog-num{background:var(--green-deep)}
+.prog-body h3{font-size:20px;font-weight:800;margin-bottom:6px}
+.prog-copy{font-size:14.5px;font-weight:800;margin-bottom:12px}
+.prog-media .prog-copy{color:var(--teal-deep)}
+.prog-solution .prog-copy{color:var(--green-deep)}
+.prog-body p{font-size:13.5px;color:var(--ink-soft);margin-bottom:18px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{
-  font-size:12.5px;font-weight:700;padding:7px 14px;border-radius:999px;
-}
-.prog-media .chip{background:var(--mint-pale);color:#22808D}
-.prog-solution .chip{background:var(--green-pale);color:#558A28}
-@media(max-width:760px){.prog-grid{grid-template-columns:1fr}}
+.chip{font-size:12px;font-weight:700;padding:6px 13px;border-radius:999px}
+.prog-media .chip{background:var(--teal-pale);color:var(--teal-deep)}
+.prog-solution .chip{background:var(--green-pale);color:var(--green-deep)}
+@media(max-width:800px){.prog-grid{grid-template-columns:1fr}}
 
-/* ===== SECTION 04 CHECK ===== */
-.check{background:#fff;position:relative;overflow:hidden}
-.check-doodle{position:absolute;font-size:46px;opacity:.12;user-select:none}
-.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:40px;position:relative;z-index:1}
-.check-item{
-  display:flex;align-items:center;gap:14px;
-  background:var(--base);border-radius:16px;padding:18px 22px;
-  font-weight:600;font-size:15px;transition:transform .2s,background .2s;
-}
-.check-item:hover{transform:translateX(4px);background:var(--mint-pale)}
-.check-box{
-  width:26px;height:26px;border-radius:8px;flex-shrink:0;
-  background:var(--mint);color:#fff;display:flex;align-items:center;justify-content:center;
-  font-size:15px;font-weight:800;
-}
-@media(max-width:760px){.check-grid{grid-template-columns:1fr}}
-
-/* ===== SECTION 05 FLOW ===== */
+/* ===== 活動の流れ ===== */
 .flow{background:linear-gradient(180deg,var(--base2),var(--base))}
-.timeline{position:relative;margin-top:48px;padding-left:36px}
-.timeline::before{
-  content:"";position:absolute;left:11px;top:8px;bottom:8px;width:3px;
-  background:linear-gradient(180deg,var(--mint),var(--green));border-radius:3px;
+.flow-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:42px}
+.flow-card{
+  background:#fff;border-radius:18px;overflow:hidden;
+  box-shadow:0 6px 18px rgba(34,69,76,.07);
+  display:flex;flex-direction:column;position:relative;
 }
-.tl-item{position:relative;padding-bottom:36px}
-.tl-item:last-child{padding-bottom:0}
-.tl-dot{
-  position:absolute;left:-36px;top:4px;width:25px;height:25px;border-radius:50%;
-  background:#fff;border:5px solid var(--mint);
+.flow-head{padding:16px 14px 10px}
+.flow-step{font-size:10.5px;font-weight:800;letter-spacing:.18em;color:var(--teal-deep)}
+.flow-card h3{font-size:14.5px;font-weight:800;line-height:1.45;margin-top:2px}
+.flow-card p{font-size:11.5px;color:var(--ink-soft);padding:0 14px 12px;line-height:1.65}
+.flow-thumb{margin-top:auto;aspect-ratio:16/10}
+.flow-thumb svg{width:100%;height:100%;display:block}
+.flow-card::after{
+  content:"≫";position:absolute;top:46%;right:-14px;z-index:2;
+  color:var(--teal);font-weight:800;font-size:16px;
 }
-.tl-item:nth-child(3) .tl-dot,.tl-item:nth-child(4) .tl-dot{border-color:var(--mint-light)}
-.tl-item:nth-child(5) .tl-dot{border-color:var(--green)}
-.tl-step{font-size:12px;font-weight:800;letter-spacing:.2em;color:var(--mint)}
-.tl-item h3{font-size:19px;font-weight:800;margin:2px 0 6px}
-.tl-item p{font-size:14px;color:var(--ink-soft);max-width:560px}
-.tl-ico{font-size:22px;margin-right:6px}
-
-/* ===== SECTION 06 FIELD ===== */
-.field{background:var(--ink);color:#fff;position:relative;overflow:hidden}
-.field .sec-label{color:var(--mint-light)}
-.field .sec-label::before{background:var(--mint-light)}
-.field .sec-lead{color:rgba(255,255,255,.75)}
-.field-map{
-  margin-top:48px;border-radius:26px;
-  background:linear-gradient(135deg,rgba(89,201,214,.18),rgba(143,216,90,.14));
-  border:1px solid rgba(255,255,255,.15);
-  padding:44px 32px;position:relative;min-height:300px;
+.flow-card:last-child::after{display:none}
+@media(max-width:980px){
+  .flow-grid{grid-template-columns:repeat(3,1fr)}
+  .flow-card:nth-child(3)::after{display:none}
 }
-.pin{
-  position:absolute;display:flex;align-items:center;gap:8px;
-  background:#fff;color:var(--ink);font-size:13px;font-weight:700;
-  padding:8px 16px;border-radius:999px;box-shadow:0 8px 22px rgba(0,0,0,.25);
-  white-space:nowrap;animation:float 5s ease-in-out infinite;
-}
-.pin .dot{width:9px;height:9px;border-radius:50%;background:var(--coral)}
-.pin1{top:14%;left:8%}
-.pin2{top:24%;right:12%;animation-delay:.7s}
-.pin3{top:52%;left:22%;animation-delay:1.4s}
-.pin4{bottom:18%;right:24%;animation-delay:2.1s}
-.pin5{bottom:10%;left:9%;animation-delay:2.8s}
-.field-center{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  text-align:center;
-}
-.field-center .big{font-size:clamp(26px,4vw,40px);font-weight:800;letter-spacing:.08em}
-.field-center .small{font-size:13px;color:rgba(255,255,255,.6);letter-spacing:.3em;margin-top:4px}
-@media(max-width:760px){
-  .field-map{min-height:420px}
-  .pin{font-size:11px;padding:6px 12px}
+@media(max-width:640px){
+  .flow-grid{grid-template-columns:repeat(2,1fr)}
+  .flow-card::after{display:none}
 }
 
-/* ===== SECTION 07 OUTPUT ===== */
-.output{background:#fff}
-.mock-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
-.mock{
-  border-radius:20px;padding:26px 18px;text-align:center;
-  transition:transform .25s;
+/* ===== 活動記録 ===== */
+.archive{
+  background:linear-gradient(135deg,var(--teal) 0%,var(--teal-deep) 60%,#188291 100%);
+  color:#fff;border-radius:34px;margin:0 18px;
 }
-.mock:hover{transform:translateY(-6px) rotate(-1deg)}
-.mock:nth-child(1){background:var(--mint-pale)}
-.mock:nth-child(2){background:var(--green-pale)}
-.mock:nth-child(3){background:#FFF6D9}
-.mock:nth-child(4){background:#FFE9E0}
-.mock .ico{font-size:42px;margin-bottom:12px}
-.mock h3{font-size:15px;font-weight:800}
-.mock p{font-size:12.5px;color:var(--ink-soft);margin-top:4px}
-@media(max-width:760px){.mock-grid{grid-template-columns:repeat(2,1fr)}}
-
-/* ===== SECTION 08 ARCHIVE ===== */
-.archive{background:linear-gradient(180deg,var(--base),var(--base2))}
-.arch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.archive-inner{max-width:1100px;margin:0 auto;padding:64px 32px;display:grid;grid-template-columns:.85fr 2.3fr;gap:36px;align-items:start}
+.archive h2{font-size:clamp(24px,3.6vw,34px);font-weight:800;margin-bottom:12px}
+.archive .lead-s{font-size:14.5px;font-weight:800;margin-bottom:12px}
+.archive p.desc{font-size:13px;opacity:.88;margin-bottom:24px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 26px;border-radius:999px;font-weight:800;font-size:14px;
+  text-decoration:none;transition:transform .2s,box-shadow .2s;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.2)}
+.btn-white{background:#fff;color:var(--teal-deep)}
+.arch-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .arch-card{
-  background:#fff;border-radius:20px;overflow:hidden;
-  box-shadow:0 6px 22px rgba(31,58,64,.07);
-  transition:transform .25s,box-shadow .25s;cursor:pointer;
+  background:#fff;color:var(--ink);border-radius:16px;overflow:hidden;
+  transition:transform .22s;cursor:pointer;display:flex;flex-direction:column;
 }
-.arch-card:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(31,58,64,.13)}
-.arch-thumb{
-  aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;font-size:46px;
+.arch-card:hover{transform:translateY(-5px)}
+.arch-meta{padding:14px 14px 8px}
+.arch-date{font-size:11px;font-weight:800;color:var(--teal-deep);letter-spacing:.06em}
+.arch-card h3{font-size:13.5px;font-weight:800;line-height:1.5;margin:3px 0 4px}
+.arch-tags{font-size:10.5px;color:var(--ink-soft);font-weight:600}
+.arch-thumb{margin-top:auto;aspect-ratio:16/10}
+.arch-thumb svg{width:100%;height:100%;display:block}
+.archive-foot{grid-column:1/-1;text-align:right;margin-top:6px}
+.archive-foot a{color:#fff;font-weight:800;font-size:13.5px;text-decoration:none}
+@media(max-width:920px){
+  .archive-inner{grid-template-columns:1fr}
+  .arch-cards{grid-template-columns:repeat(2,1fr)}
 }
-.arch-card:nth-child(1) .arch-thumb{background:linear-gradient(135deg,var(--mint-pale),var(--mint-light))}
-.arch-card:nth-child(2) .arch-thumb{background:linear-gradient(135deg,var(--green-pale),var(--green-light))}
-.arch-card:nth-child(3) .arch-thumb{background:linear-gradient(135deg,#FFF6D9,var(--orange))}
-.arch-body{padding:20px 22px}
-.arch-date{font-size:12px;font-weight:700;color:var(--mint);letter-spacing:.08em}
-.arch-body h3{font-size:16px;font-weight:800;margin:6px 0 4px;line-height:1.5}
-.arch-body p{font-size:13px;color:var(--ink-soft)}
-.arch-tag{
-  display:inline-block;font-size:11px;font-weight:700;
-  background:var(--base2);color:var(--ink-soft);
-  padding:4px 12px;border-radius:999px;margin-top:12px;
-}
-.arch-note{
-  text-align:center;margin-top:36px;font-size:13px;color:var(--ink-soft);
-}
-@media(max-width:760px){.arch-grid{grid-template-columns:1fr}}
 
-/* ===== SECTION 09 MENTOR ===== */
-.mentor{background:#fff}
-.mentor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
-.mentor-card{
-  background:var(--base);border-radius:22px;padding:34px 26px;text-align:center;
-  border:2px solid transparent;transition:border-color .25s;
+/* ===== フィールド＆成果 ===== */
+.fieldout{background:var(--base)}
+.fo-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.field-map{
+  position:relative;border-radius:24px;margin-top:26px;
+  background:linear-gradient(150deg,#E4F6F4,#EDF8E3);
+  min-height:380px;overflow:hidden;
 }
-.mentor-card:hover{border-color:var(--mint)}
+.map-shape{position:absolute;inset:0}
+.area-pin{
+  position:absolute;display:flex;align-items:center;gap:7px;
+  background:#fff;font-size:12px;font-weight:800;color:var(--ink);
+  padding:7px 14px;border-radius:999px;box-shadow:0 6px 16px rgba(34,69,76,.14);
+  white-space:nowrap;
+}
+.area-pin .d{width:10px;height:10px;border-radius:50%;background:var(--teal)}
+.area-pin:nth-child(even) .d{background:var(--green-deep)}
+.mock-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.mock{
+  background:#fff;border-radius:16px;padding:0 0 14px;text-align:center;overflow:hidden;
+  box-shadow:0 6px 16px rgba(34,69,76,.07);transition:transform .22s;
+}
+.mock:hover{transform:translateY(-4px)}
+.mock .mthumb{aspect-ratio:1/0.78;margin-bottom:10px}
+.mock .mthumb svg{width:100%;height:100%;display:block}
+.mock h3{font-size:12.5px;font-weight:800}
+@media(max-width:880px){
+  .fo-grid{grid-template-columns:1fr}
+}
+
+/* ===== メンター＆お知らせ ===== */
+.duo{background:#fff}
+.duo-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:start}
+.mentor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+.mentor-card{text-align:center}
 .mentor-avatar{
-  width:84px;height:84px;border-radius:50%;margin:0 auto 16px;
-  display:flex;align-items:center;justify-content:center;font-size:38px;
+  width:96px;height:96px;border-radius:50%;margin:0 auto 12px;overflow:hidden;
+  border:4px solid var(--teal-pale);
 }
-.mentor-card:nth-child(1) .mentor-avatar{background:var(--mint-pale)}
-.mentor-card:nth-child(2) .mentor-avatar{background:var(--green-pale)}
-.mentor-card:nth-child(3) .mentor-avatar{background:#FFF6D9}
-.mentor-card h3{font-size:17px;font-weight:800;margin-bottom:8px}
-.mentor-card p{font-size:13.5px;color:var(--ink-soft)}
-@media(max-width:760px){.mentor-grid{grid-template-columns:1fr}}
+.mentor-card:nth-child(even) .mentor-avatar{border-color:var(--green-pale)}
+.mentor-avatar svg{width:100%;height:100%;display:block}
+.mentor-card h3{font-size:13.5px;font-weight:800;margin-bottom:4px}
+.mentor-card p{font-size:11.5px;color:var(--ink-soft);line-height:1.6}
+.news-box{background:var(--base);border-radius:22px;padding:32px 30px}
+.news-box h2{font-size:22px;font-weight:800;margin-bottom:18px}
+.news-list{list-style:none}
+.news-list li{
+  display:flex;gap:14px;align-items:baseline;padding:13px 2px;
+  border-bottom:1px dashed rgba(59,184,199,.4);font-size:13.5px;
+}
+.news-date{font-size:12px;font-weight:800;color:var(--teal-deep);flex-shrink:0}
+.news-new{
+  font-size:9.5px;font-weight:800;background:var(--coral);color:#fff;
+  padding:2px 8px;border-radius:999px;margin-left:6px;
+}
+.news-more{text-align:right;margin-top:18px}
+.news-more a{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--teal-deep);color:#fff;font-weight:800;font-size:13px;
+  padding:11px 22px;border-radius:999px;text-decoration:none;
+}
+@media(max-width:880px){
+  .duo-grid{grid-template-columns:1fr}
+  .mentor-grid{grid-template-columns:repeat(2,1fr)}
+}
 
-/* ===== SECTION 10 SCHEDULE ===== */
-.schedule{background:linear-gradient(180deg,var(--base2),var(--base))}
-.sch-track{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin-top:44px}
-.sch-item{
-  background:#fff;border-radius:16px;padding:20px 10px;text-align:center;
-  box-shadow:0 4px 14px rgba(31,58,64,.06);
-}
-.sch-item .ico{font-size:26px;margin-bottom:8px}
-.sch-item h3{font-size:12.5px;font-weight:800;line-height:1.5}
-.sch-item .when{font-size:11px;color:var(--ink-soft);margin-top:4px;font-weight:600}
-@media(max-width:860px){.sch-track{grid-template-columns:repeat(2,1fr)}.sch-track .sch-item:last-child{grid-column:1/-1}}
-
-/* ===== SECTION 11 FAQ ===== */
-.faq{background:#fff}
-.faq-list{margin-top:40px;max-width:760px}
-.faq-item{
-  border:2px solid var(--base2);border-radius:18px;margin-bottom:14px;overflow:hidden;
-  transition:border-color .25s;
-}
-.faq-item[open]{border-color:var(--mint)}
-.faq-item summary{
-  list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;
-  padding:20px 24px;font-weight:700;font-size:15px;
-}
+/* ===== FAQ ===== */
+.faq{background:linear-gradient(180deg,var(--base2),var(--base))}
+.faq-list{margin-top:36px;max-width:760px}
+.faq-item{border:2px solid #fff;background:#fff;border-radius:16px;margin-bottom:12px;overflow:hidden;box-shadow:0 4px 14px rgba(34,69,76,.05);transition:border-color .25s}
+.faq-item[open]{border-color:var(--teal)}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;padding:18px 22px;font-weight:700;font-size:14.5px}
 .faq-item summary::-webkit-details-marker{display:none}
-.faq-q{
-  width:30px;height:30px;border-radius:10px;flex-shrink:0;
-  background:var(--mint);color:#fff;display:flex;align-items:center;justify-content:center;
-  font-weight:800;font-size:14px;
-}
-.faq-a{padding:0 24px 22px 68px;font-size:14px;color:var(--ink-soft)}
+.faq-q{width:28px;height:28px;border-radius:9px;flex-shrink:0;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}
+.faq-a{padding:0 22px 20px 63px;font-size:13.5px;color:var(--ink-soft)}
 
-/* ===== CTA / FOOTER ===== */
-.bottom-cta{
-  background:linear-gradient(135deg,var(--mint) 0%,var(--green) 100%);
-  color:#fff;text-align:center;padding:80px 24px;
+/* ===== FOOTER ===== */
+footer{background:var(--ink);color:rgba(255,255,255,.75);padding:48px 24px 36px}
+.foot-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:22px}
+.foot-logo img{height:64px;width:auto;filter:brightness(0) invert(1);opacity:.95}
+.foot-nav{display:flex;gap:18px;flex-wrap:wrap;list-style:none}
+.foot-nav a{color:rgba(255,255,255,.75);font-size:12.5px;text-decoration:none}
+.foot-nav a:hover{color:#fff}
+.foot-sns{display:flex;gap:12px}
+.foot-sns a{
+  width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.12);
+  display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;
+  font-size:16px;transition:background .2s;
 }
-.bottom-cta h2{font-size:clamp(24px,4vw,36px);font-weight:800;margin-bottom:14px}
-.bottom-cta p{font-size:15px;opacity:.9;margin-bottom:32px}
-.bottom-cta .btn{background:#fff;color:var(--ink)}
-footer{background:var(--ink);color:rgba(255,255,255,.66);padding:44px 24px;text-align:center;font-size:13px}
-footer .foot-logo{font-weight:800;color:#fff;font-size:16px;margin-bottom:10px}
+.foot-sns a:hover{background:var(--teal)}
+.foot-copy{width:100%;text-align:center;font-size:11.5px;opacity:.55;margin-top:18px}
 
-/* ===== モバイル固定ボタン ===== */
-.fixed-cta{
-  position:fixed;bottom:16px;left:16px;right:16px;z-index:90;display:none;
-}
+/* ===== モバイル固定CTA ===== */
+.fixed-cta{position:fixed;bottom:16px;left:16px;right:16px;z-index:90;display:none}
 .fixed-cta a{
   display:flex;align-items:center;justify-content:center;gap:8px;
-  background:var(--ink);color:#fff;font-weight:800;font-size:15px;
-  padding:16px;border-radius:999px;text-decoration:none;
-  box-shadow:0 12px 30px rgba(31,58,64,.35);
+  background:var(--teal-deep);color:#fff;font-weight:800;font-size:15px;
+  padding:15px;border-radius:999px;text-decoration:none;
+  box-shadow:0 12px 30px rgba(30,154,171,.4);
 }
 @media(max-width:760px){
   .fixed-cta{display:block}
-  section{padding:64px 0}
-  body{padding-bottom:76px}
+  section{padding:60px 0}
+  body{padding-bottom:74px}
 }
 
 /* ===== reveal ===== */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.on{opacity:1;transform:none}
 </style>
 </head>
 <body>
 
+<!-- ===== 共通SVG定義（イラストパーツ） ===== -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9ADCF0"/><stop offset="1" stop-color="#D8F3F7"/>
+    </linearGradient>
+    <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#A8E07A"/><stop offset="1" stop-color="#8FD85A"/>
+    </linearGradient>
+    <linearGradient id="room" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EAF7F8"/><stop offset="1" stop-color="#D9F3F2"/>
+    </linearGradient>
+    <linearGradient id="tealgrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3BB8C7"/><stop offset="1" stop-color="#7DDDD2"/>
+    </linearGradient>
+
+    <!-- 学生（男子・カメラ持ち） -->
+    <g id="boy-cam">
+      <ellipse cx="0" cy="58" rx="22" ry="5" fill="rgba(34,69,76,.1)"/>
+      <rect x="-13" y="8" width="26" height="34" rx="10" fill="#fff" stroke="#CFE6EA" stroke-width="1.5"/>
+      <path d="M-5 8 L0 20 L5 8" fill="none" stroke="#3BB8C7" stroke-width="3" stroke-linecap="round"/>
+      <rect x="-13" y="36" width="26" height="20" rx="6" fill="#22454C"/>
+      <circle cx="0" cy="-6" r="13" fill="#FFE3CC"/>
+      <path d="M-13 -8 Q-12 -22 0 -21 Q13 -22 13 -8 Q8 -16 0 -15 Q-8 -16 -13 -8Z" fill="#2E3A3D"/>
+      <rect x="6" y="14" width="16" height="11" rx="3" fill="#22454C"/>
+      <circle cx="14" cy="19.5" r="4" fill="#7DDDD2"/>
+    </g>
+    <!-- 学生（女子） -->
+    <g id="girl-st">
+      <ellipse cx="0" cy="58" rx="22" ry="5" fill="rgba(34,69,76,.1)"/>
+      <path d="M-14 42 L14 42 L11 56 L-11 56 Z" fill="#46606B"/>
+      <rect x="-13" y="8" width="26" height="36" rx="10" fill="#fff" stroke="#CFE6EA" stroke-width="1.5"/>
+      <path d="M-4 10 L0 16 L4 10" fill="none" stroke="#FF7A59" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="0" cy="-6" r="13" fill="#FFE3CC"/>
+      <path d="M-13 -6 Q-14 -23 0 -22 Q14 -23 13 -6 L15 8 Q12 4 10 -2 Q4 -14 0 -14 Q-4 -14 -10 -2 Q-12 4 -15 8 Z" fill="#4A3A35"/>
+    </g>
+    <!-- 学生（スマホ女子） -->
+    <g id="girl-phone">
+      <ellipse cx="0" cy="58" rx="22" ry="5" fill="rgba(34,69,76,.1)"/>
+      <path d="M-14 42 L14 42 L11 56 L-11 56 Z" fill="#46606B"/>
+      <rect x="-13" y="8" width="26" height="36" rx="10" fill="#fff" stroke="#CFE6EA" stroke-width="1.5"/>
+      <circle cx="0" cy="-6" r="13" fill="#FFE3CC"/>
+      <path d="M-13 -4 Q-15 -24 0 -22 Q15 -24 13 -4 Q10 -16 0 -15 Q-10 -16 -13 -4 Z" fill="#5B4439"/>
+      <rect x="8" y="12" width="10" height="17" rx="3" fill="#22454C"/>
+      <rect x="9.7" y="14" width="6.6" height="11" rx="1.5" fill="#7DDDD2"/>
+    </g>
+    <!-- メンター（大人） -->
+    <g id="adult">
+      <rect x="-14" y="8" width="28" height="38" rx="11" fill="#3BB8C7"/>
+      <circle cx="0" cy="-7" r="13" fill="#FFE3CC"/>
+      <path d="M-13 -9 Q-12 -23 0 -22 Q12 -23 13 -9 Q7 -17 0 -16 Q-7 -17 -13 -9Z" fill="#33454A"/>
+    </g>
+  </defs>
+</svg>
+
 <header>
   <nav class="nav">
-    <a href="#top" class="logo"><span class="logo-badge">⛺</span>イノベ フィールド キャンプ</a>
+    <a href="#top" class="logo-link"><img src="assets/logo.png" alt="イノベ フィールド キャンプ"></a>
     <ul class="nav-links">
-      <li><a href="#about">プログラム</a></li>
+      <li><a href="#programs">プログラムについて</a></li>
       <li><a href="#flow">活動の流れ</a></li>
       <li><a href="#archive">活動記録</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#archive" class="nav-cta">活動記録を見る</a></li>
+      <li><a href="#field">フィールド</a></li>
+      <li><a href="#mentor">メンター</a></li>
+      <li><a href="#news">お知らせ</a></li>
+      <li><a href="#faq">よくある質問</a></li>
     </ul>
   </nav>
 </header>
 
-<!-- SECTION 01: HERO -->
+<!-- ===== HERO ===== -->
 <section class="hero" id="top">
-  <span class="hero-doodle" style="top:12%;left:5%">📷</span>
-  <span class="hero-doodle" style="top:20%;right:8%;animation-delay:1s">💡</span>
-  <span class="hero-doodle" style="bottom:22%;left:10%;animation-delay:2s">💬</span>
-  <span class="hero-doodle" style="bottom:14%;right:14%;animation-delay:.5s">📍</span>
+  <span class="hero-doodle" style="top:14%;left:3%">
+    <svg width="46" height="40" viewBox="0 0 46 40" fill="none"><rect x="6" y="4" width="34" height="24" rx="4" stroke="#3BB8C7" stroke-width="2.5"/><path d="M14 33h18M23 28v5" stroke="#3BB8C7" stroke-width="2.5" stroke-linecap="round"/><path d="M14 12l8 6-8 6" stroke="#3BB8C7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </span>
+  <span class="hero-doodle" style="top:58%;left:44%;animation-delay:1.2s">
+    <svg width="40" height="36" viewBox="0 0 40 36" fill="none"><path d="M6 14 Q6 4 20 4 Q34 4 34 14 Q34 24 22 24 L16 31 L17 24 Q6 24 6 14Z" stroke="#7DDDD2" stroke-width="2.5" stroke-linejoin="round"/><circle cx="14" cy="14" r="1.8" fill="#7DDDD2"/><circle cx="20" cy="14" r="1.8" fill="#7DDDD2"/><circle cx="26" cy="14" r="1.8" fill="#7DDDD2"/></svg>
+  </span>
+  <span class="hero-doodle" style="bottom:8%;left:8%;animation-delay:2s">
+    <svg width="38" height="38" viewBox="0 0 38 38" fill="none"><path d="M19 3l3.6 10.8L34 17.4l-10.8 3.6L19 32l-3.6-11L4 17.4l11.4-3.6Z" stroke="#8FD85A" stroke-width="2.5" stroke-linejoin="round"/></svg>
+  </span>
 
   <div class="hero-inner">
     <div>
-      <span class="hero-tag">⛺ INNOVE FIELD CAMP</span>
-      <h1>学校の外で、<span class="line2"><span class="accent-mark">未来を見つける。</span></span></h1>
-      <p class="hero-sub">浜通りの企業・人・地域を取材し、<br>高校生の視点で、未来を発信するプロジェクト。</p>
-      <div class="hero-ctas">
-        <a href="#about" class="btn btn-primary">プログラムを見る →</a>
-        <a href="#archive" class="btn btn-secondary">活動記録を見る</a>
-      </div>
-      <div class="hero-meta">
-        <div><strong>対象</strong>福島県内の高校生</div>
-        <div><strong>活動内容</strong>取材／動画制作／課題解決／成果発表</div>
-        <div><strong>期間</strong>調整中</div>
+      <img class="hero-logo" src="assets/logo.png" alt="イノベ フィールド キャンプ">
+      <p class="hero-tagline">高校生の視点で、未来をつくるフィールドへ。</p>
+      <h1>学校の外で、<br><span class="tealed">未来</span>を見つける。</h1>
+      <p class="hero-sub">イノベ地域の企業・人・地域を取材し、<br>高校生の視点で、動画・SNS・デザイン・提案にまとめる<br>フィールド型クリエイティブプログラム。</p>
+      <div class="hero-chips">
+        <div class="hero-chip"><div class="k">👥 対象</div><div class="v">福島県内の高校生</div></div>
+        <div class="hero-chip"><div class="k">📅 活動期間</div><div class="v">調整中</div></div>
+        <div class="hero-chip"><div class="k">📍 活動エリア</div><div class="v">福島イノベーション・<br>コースト構想エリア</div></div>
       </div>
     </div>
     <div class="hero-visual">
-      <div class="hero-card">
-        <div class="hero-photo">
-          <span class="cam">📸</span>
-          <span class="cap">FIELD × CREATIVE</span>
-        </div>
+      <div class="hero-blob">
+        <!-- ヒーローイラスト：青空の下、カメラを持つ高校生たち -->
+        <svg viewBox="0 0 480 440" xmlns="http://www.w3.org/2000/svg">
+          <rect width="480" height="440" fill="url(#sky)"/>
+          <circle cx="400" cy="60" r="34" fill="#FFF6C9" opacity=".9"/>
+          <ellipse cx="110" cy="80" rx="52" ry="18" fill="#fff" opacity=".85"/>
+          <ellipse cx="320" cy="120" rx="64" ry="20" fill="#fff" opacity=".75"/>
+          <path d="M0 320 Q120 270 240 300 Q360 330 480 290 L480 440 L0 440 Z" fill="url(#grass)"/>
+          <path d="M0 360 Q160 320 480 350 L480 440 L0 440Z" fill="#7CC94B" opacity=".55"/>
+          <!-- 風車 -->
+          <g transform="translate(70,210)" stroke="#fff" stroke-width="5" stroke-linecap="round">
+            <line x1="0" y1="0" x2="0" y2="80"/>
+            <line x1="0" y1="0" x2="-26" y2="-18"/><line x1="0" y1="0" x2="26" y2="-16"/><line x1="0" y1="0" x2="2" y2="-32"/>
+            <circle cx="0" cy="0" r="5" fill="#fff" stroke="none"/>
+          </g>
+          <!-- 校舎/施設 -->
+          <g transform="translate(355,235)">
+            <rect x="0" y="0" width="92" height="56" rx="6" fill="#fff" opacity=".92"/>
+            <rect x="10" y="12" width="16" height="13" rx="2" fill="#9ADCF0"/>
+            <rect x="38" y="12" width="16" height="13" rx="2" fill="#9ADCF0"/>
+            <rect x="66" y="12" width="16" height="13" rx="2" fill="#9ADCF0"/>
+            <rect x="36" y="34" width="20" height="22" rx="2" fill="#3BB8C7"/>
+          </g>
+          <!-- 学生たち -->
+          <g transform="translate(170,300) scale(1.55)"><use href="#boy-cam"/></g>
+          <g transform="translate(265,315) scale(1.45)"><use href="#girl-st"/></g>
+          <g transform="translate(340,330) scale(1.3)"><use href="#girl-phone"/></g>
+          <!-- 飛ぶ鳥 -->
+          <path d="M150 130 q8 -8 16 0 q8 -8 16 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M210 100 q7 -7 14 0 q7 -7 14 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </svg>
       </div>
-      <span class="hero-sticker st1">🎬 動画制作</span>
-      <span class="hero-sticker st2">🗺️ フィールドワーク</span>
-      <span class="hero-sticker st3">✨ 高校生の挑戦</span>
-    </div>
-  </div>
-  <div class="scroll-cue en">SCROLL</div>
-</section>
-
-<!-- SECTION 02: ABOUT -->
-<section class="about" id="about">
-  <div class="wrap">
-    <div class="reveal">
-      <span class="sec-label en">What's INNOVE FIELD CAMP?</span>
-      <h2 class="sec-title">イノベ フィールド キャンプとは？</h2>
-      <p class="sec-lead">
-        イノベ地域をフィールドに、高校生が現地を訪れ、企業・地域事業者・地域で挑戦する人たちと出会い、自分たちの視点で地域の魅力や課題を発信するプログラムです。<br><br>
-        単なる見学ではなく、<strong>「知る」「聞く」「考える」「つくる」「届ける」</strong>までを体験します。
-      </p>
-    </div>
-    <div class="steps5 reveal">
-      <div class="step5"><div class="ico">🔍</div><div class="num en">STEP 1</div><h3>知る</h3></div>
-      <div class="step5"><div class="ico">🤝</div><div class="num en">STEP 2</div><h3>出会う</h3></div>
-      <div class="step5"><div class="ico">💭</div><div class="num en">STEP 3</div><h3>考える</h3></div>
-      <div class="step5"><div class="ico">🛠️</div><div class="num en">STEP 4</div><h3>つくる</h3></div>
-      <div class="step5"><div class="ico">📣</div><div class="num en">STEP 5</div><h3>届ける</h3></div>
+      <div class="hero-banner">見つける。考える。つくる。届ける。</div>
     </div>
   </div>
 </section>
 
-<!-- SECTION 03: PROGRAMS -->
-<section class="programs">
+<!-- ===== 2つのプログラム ===== -->
+<section class="programs" id="programs">
   <div class="wrap">
-    <div class="reveal">
-      <span class="sec-label en">2 Programs</span>
-      <h2 class="sec-title">選べる、または連動する<br>2つのチャレンジ。</h2>
-    </div>
+    <h2 class="sec-title reveal" style="text-align:center">選べる、または連動する<span class="tealed">２つのチャレンジ</span>。</h2>
     <div class="prog-grid">
       <div class="prog-card prog-media reveal">
-        <div class="prog-num en">PROGRAM 01</div>
-        <h3>広報コンテンツ制作プログラム</h3>
-        <p class="prog-copy">見つけた魅力を、伝わるカタチに。</p>
-        <p>現地取材やインタビューを通じて、イノベ地域の企業・人・仕事・未来を取材し、動画、SNS投稿、ポスター、記事などの広報コンテンツを制作します。</p>
-        <div class="chips">
-          <span class="chip">🎬 動画制作</span>
-          <span class="chip">📷 写真撮影</span>
-          <span class="chip">🎤 インタビュー</span>
-          <span class="chip">📱 SNS投稿</span>
-          <span class="chip">🎨 ポスター制作</span>
-          <span class="chip">✍️ 記事制作</span>
+        <div class="prog-visual">
+          <!-- 撮影イラスト -->
+          <svg viewBox="0 0 480 255" xmlns="http://www.w3.org/2000/svg">
+            <rect width="480" height="255" fill="url(#sky)"/>
+            <path d="M0 190 Q160 160 480 185 L480 255 L0 255Z" fill="url(#grass)"/>
+            <ellipse cx="90" cy="70" rx="44" ry="15" fill="#fff" opacity=".8"/>
+            <g transform="translate(200,175) scale(1.5)"><use href="#boy-cam"/></g>
+            <g transform="translate(300,185) scale(1.35)"><use href="#girl-phone"/></g>
+            <g transform="translate(380,60)">
+              <rect x="-28" y="-20" width="56" height="40" rx="8" fill="#fff" opacity=".95"/>
+              <path d="M-8 -8 L10 0 L-8 8Z" fill="#3BB8C7"/>
+            </g>
+          </svg>
+        </div>
+        <div class="prog-body">
+          <span class="prog-num en">01</span>
+          <h3>広報コンテンツ制作プログラム</h3>
+          <p class="prog-copy">見つけた魅力を、伝わるカタチに。</p>
+          <p>現地取材やインタビューを通して、イノベ地域の企業・人・仕事・未来を取材し、動画、SNS投稿、ポスター、記事などの広報コンテンツを制作します。</p>
+          <div class="chips">
+            <span class="chip">🎬 動画制作</span><span class="chip">📷 写真撮影</span><span class="chip">🎤 インタビュー</span>
+            <span class="chip">📱 SNS投稿</span><span class="chip">🎨 ポスター制作</span><span class="chip">✍️ 記事制作</span>
+          </div>
         </div>
       </div>
       <div class="prog-card prog-solution reveal">
-        <div class="prog-num en">PROGRAM 02</div>
-        <h3>課題解決力育成プログラム</h3>
-        <p class="prog-copy">地域のリアルな課題に、高校生の視点で挑む。</p>
-        <p>浜通り地域の課題や可能性を学び、地域で活動する人たちの声を聞きながら、課題を整理し、解決アイデアを提案します。</p>
-        <div class="chips">
-          <span class="chip">🔎 地域課題の発見</span>
-          <span class="chip">💡 アイデアづくり</span>
-          <span class="chip">📝 企画書作成</span>
-          <span class="chip">💬 チームディスカッション</span>
-          <span class="chip">👀 メンターレビュー</span>
-          <span class="chip">🎤 成果発表</span>
+        <div class="prog-visual">
+          <!-- ディスカッションイラスト -->
+          <svg viewBox="0 0 480 255" xmlns="http://www.w3.org/2000/svg">
+            <rect width="480" height="255" fill="url(#room)"/>
+            <rect x="40" y="36" width="180" height="110" rx="8" fill="#fff" stroke="#CFE6EA" stroke-width="2"/>
+            <rect x="58" y="54" width="40" height="28" rx="4" fill="#FFE95C"/>
+            <rect x="108" y="54" width="40" height="28" rx="4" fill="#C8F27A"/>
+            <rect x="158" y="54" width="40" height="28" rx="4" fill="#7DDDD2"/>
+            <rect x="58" y="92" width="40" height="28" rx="4" fill="#FFD2C4"/>
+            <rect x="108" y="92" width="40" height="28" rx="4" fill="#7DDDD2"/>
+            <path d="M170 100 l16 10 -16 10" stroke="#3BB8C7" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <g transform="translate(300,180) scale(1.45)"><use href="#girl-st"/></g>
+            <g transform="translate(390,190) scale(1.35)"><use href="#boy-cam"/></g>
+            <g transform="translate(120,205) scale(1.3)"><use href="#girl-phone"/></g>
+            <g transform="translate(255,60)">
+              <circle r="22" fill="#FFF6C9"/>
+              <path d="M0 -9 Q7 -9 7 -2 Q7 3 2 5 L2 8 L-2 8 L-2 4 Q-7 2 -7 -2 Q-7 -9 0 -9Z" fill="#FFB547"/>
+              <rect x="-2.5" y="9.5" width="5" height="3" rx="1.5" fill="#FFB547"/>
+            </g>
+          </svg>
+        </div>
+        <div class="prog-body">
+          <span class="prog-num en">02</span>
+          <h3>課題解決力育成プログラム</h3>
+          <p class="prog-copy">地域のリアルな課題に、高校生の視点で挑む。</p>
+          <p>浜通り地域の課題や可能性を学び、地域で活動する人たちの声を聞きながら、課題を整理し、解決アイデアを提案します。</p>
+          <div class="chips">
+            <span class="chip">🔎 課題発見</span><span class="chip">💡 アイデアづくり</span><span class="chip">📝 企画書作成</span>
+            <span class="chip">💬 チーム討議</span><span class="chip">👀 メンター伴走</span><span class="chip">🎤 成果発表</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SECTION 04: CHECK -->
-<section class="check">
-  <span class="check-doodle" style="top:8%;right:6%">💭</span>
-  <span class="check-doodle" style="bottom:10%;left:4%">⭐</span>
-  <div class="wrap">
-    <div class="reveal">
-      <span class="sec-label en">For You</span>
-      <h2 class="sec-title">ひとつでも当てはまったら、<br>この活動はきっと面白い。</h2>
-    </div>
-    <div class="check-grid reveal">
-      <div class="check-item"><span class="check-box">✓</span>学校ではできない体験をしてみたい</div>
-      <div class="check-item"><span class="check-box">✓</span>人と違うことにチャレンジしたい</div>
-      <div class="check-item"><span class="check-box">✓</span>SNS、映像、デザインに興味がある</div>
-      <div class="check-item"><span class="check-box">✓</span>地域や社会課題について考えてみたい</div>
-      <div class="check-item"><span class="check-box">✓</span>将来の進路や仕事について視野を広げたい</div>
-      <div class="check-item"><span class="check-box">✓</span>新しい仲間と出会いたい</div>
-      <div class="check-item"><span class="check-box">✓</span>自分の考えを発信できるようになりたい</div>
-      <div class="check-item"><span class="check-box">✓</span>同級生より一歩先の経験をしてみたい</div>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 05: FLOW -->
+<!-- ===== 活動の流れ ===== -->
 <section class="flow" id="flow">
   <div class="wrap">
-    <div class="reveal">
-      <span class="sec-label en">Flow</span>
-      <h2 class="sec-title">活動の流れ</h2>
-    </div>
-    <div class="timeline reveal">
-      <div class="tl-item">
-        <span class="tl-dot"></span>
-        <div class="tl-step en">STEP 01</div>
-        <h3><span class="tl-ico">🚀</span>キックオフ</h3>
-        <p>イノベ構想やプログラムの目的を学び、チームごとに活動テーマを確認。</p>
-      </div>
-      <div class="tl-item">
-        <span class="tl-dot"></span>
-        <div class="tl-step en">STEP 02</div>
-        <h3><span class="tl-ico">🗺️</span>現地フィールドワーク</h3>
-        <p>浜通り地域を訪問し、企業・地域事業者・地域で活動する人を取材。</p>
-      </div>
-      <div class="tl-item">
-        <span class="tl-dot"></span>
-        <div class="tl-step en">STEP 03</div>
-        <h3><span class="tl-ico">🛠️</span>企画・制作ワーク</h3>
-        <p>取材内容をもとに、動画・記事・ポスター・課題解決提案を制作。</p>
-      </div>
-      <div class="tl-item">
-        <span class="tl-dot"></span>
-        <div class="tl-step en">STEP 04</div>
-        <h3><span class="tl-ico">👀</span>中間レビュー</h3>
-        <p>メンターや関係者からフィードバックを受け、内容をブラッシュアップ。</p>
-      </div>
-      <div class="tl-item">
-        <span class="tl-dot"></span>
-        <div class="tl-step en">STEP 05</div>
-        <h3><span class="tl-ico">🎤</span>成果発表</h3>
-        <p>制作物や提案内容を発表し、WebやSNS等で成果を発信。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 06: FIELD -->
-<section class="field">
-  <div class="wrap">
-    <div class="reveal">
-      <span class="sec-label en">Field Work</span>
-      <h2 class="sec-title">フィールドは、浜通り。</h2>
-      <p class="sec-lead">
-        ロボット、ドローン、エネルギー、農林水産業、まちづくり、起業。イノベ地域には、これからの福島をつくる現場があります。<br><br>
-        現地でしか聞けない話、会ってみないと分からない仕事、高校生だからこそ見つけられる視点を、自分たちの言葉で記録していきます。
-      </p>
-    </div>
-    <div class="field-map reveal">
-      <span class="pin pin1"><span class="dot"></span>🏭 企業</span>
-      <span class="pin pin2"><span class="dot"></span>🛸 研究・技術拠点</span>
-      <span class="pin pin3"><span class="dot"></span>🌾 地域事業者</span>
-      <span class="pin pin4"><span class="dot"></span>🚀 起業家</span>
-      <span class="pin pin5"><span class="dot"></span>🏘️ 地域コミュニティ</span>
-      <div class="field-center">
-        <div class="big en">HAMADORI</div>
-        <div class="small en">FUKUSHIMA · INNOVATION COAST</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 07: OUTPUT -->
-<section class="output">
-  <div class="wrap">
-    <div class="reveal">
-      <span class="sec-label en">Output</span>
-      <h2 class="sec-title">最後は、社会に届ける。</h2>
-      <p class="sec-lead">活動の成果は、発表会やWeb、SNS等を通じて発信します。高校生の視点で見つけた地域の魅力や課題を、同世代、保護者、学校、地域の人たちへ届けます。</p>
-    </div>
-    <div class="mock-grid reveal">
-      <div class="mock"><div class="ico">📱</div><h3>ショート動画</h3><p>SNS投稿・リール</p></div>
-      <div class="mock"><div class="ico">📰</div><h3>インタビュー記事</h3><p>Web掲載記事</p></div>
-      <div class="mock"><div class="ico">🖼️</div><h3>ポスター</h3><p>デザイン制作物</p></div>
-      <div class="mock"><div class="ico">💡</div><h3>課題解決アイデア</h3><p>提案・発表資料</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 08: ARCHIVE -->
-<section class="archive" id="archive">
-  <div class="wrap">
-    <div class="reveal">
-      <span class="sec-label en">Activity Archive</span>
-      <h2 class="sec-title">活動の記録を、未来へ残す。</h2>
-      <p class="sec-lead">フィールドワークの様子や参加者の声、制作過程、成果発表まで、活動の軌跡をアーカイブとして掲載します。参加者自身が振り返ることができるだけでなく、次年度以降の参加者や地域の人たちにも、プロジェクトの価値を伝えていきます。</p>
-    </div>
-    <div class="arch-grid reveal">
-      <div class="arch-card">
-        <div class="arch-thumb">🗺️</div>
-        <div class="arch-body">
-          <div class="arch-date en">COMING SOON</div>
-          <h3>フィールドワークレポート</h3>
-          <p>浜通り現地視察の様子をレポート形式で掲載予定。</p>
-          <span class="arch-tag">活動レポート</span>
+    <h2 class="sec-title reveal">活動の流れ</h2>
+    <div class="flow-grid reveal">
+      <div class="flow-card">
+        <div class="flow-head"><div class="flow-step en">STEP 01</div><h3>キックオフ</h3></div>
+        <p>イノベ構想やプログラムの目的を学び、チームごとに活動テーマを設定します。</p>
+        <div class="flow-thumb">
+          <svg viewBox="0 0 320 200"><rect width="320" height="200" fill="url(#room)"/><rect x="110" y="30" width="100" height="64" rx="6" fill="#fff" stroke="#CFE6EA" stroke-width="2"/><path d="M135 50 l20 12 -20 12" fill="#3BB8C7"/><g transform="translate(85,150) scale(1.0)"><use href="#girl-st"/></g><g transform="translate(160,158) scale(1.0)"><use href="#boy-cam"/></g><g transform="translate(235,150) scale(1.0)"><use href="#girl-phone"/></g></svg>
         </div>
       </div>
-      <div class="arch-card">
-        <div class="arch-thumb">🎬</div>
-        <div class="arch-body">
-          <div class="arch-date en">COMING SOON</div>
-          <h3>制作の裏側</h3>
-          <p>動画・ポスター・記事ができるまでの制作過程を紹介予定。</p>
-          <span class="arch-tag">制作ストーリー</span>
+      <div class="flow-card">
+        <div class="flow-head"><div class="flow-step en">STEP 02</div><h3>フィールドワーク</h3></div>
+        <p>浜通り地域を訪問し、企業・地域事業者・地域で活動する人を取材します。</p>
+        <div class="flow-thumb">
+          <svg viewBox="0 0 320 200"><rect width="320" height="200" fill="url(#sky)"/><path d="M0 150 Q120 120 320 145 L320 200 L0 200Z" fill="url(#grass)"/><ellipse cx="70" cy="50" rx="36" ry="13" fill="#fff" opacity=".8"/><g transform="translate(120,140) scale(1.05)"><use href="#boy-cam"/></g><g transform="translate(210,150) scale(1.0)"><use href="#girl-st"/></g><g transform="translate(275,90)"><rect x="-24" y="-16" width="48" height="34" rx="5" fill="#fff" opacity=".9"/><rect x="-14" y="-7" width="11" height="9" rx="2" fill="#9ADCF0"/><rect x="3" y="-7" width="11" height="9" rx="2" fill="#9ADCF0"/></g></svg>
         </div>
       </div>
-      <div class="arch-card">
-        <div class="arch-thumb">🎤</div>
-        <div class="arch-body">
-          <div class="arch-date en">COMING SOON</div>
-          <h3>成果発表ダイジェスト</h3>
-          <p>成果発表会のハイライトと参加者インタビューを掲載予定。</p>
-          <span class="arch-tag">成果アーカイブ</span>
+      <div class="flow-card">
+        <div class="flow-head"><div class="flow-step en">STEP 03</div><h3>制作ワーク</h3></div>
+        <p>取材内容をもとに、動画・記事・ポスター・提案を制作します。</p>
+        <div class="flow-thumb">
+          <svg viewBox="0 0 320 200"><rect width="320" height="200" fill="url(#room)"/><rect x="60" y="40" width="84" height="56" rx="6" fill="#22454C"/><rect x="68" y="48" width="68" height="40" rx="3" fill="#7DDDD2"/><path d="M92 60 l14 8 -14 8Z" fill="#fff"/><rect x="170" y="46" width="60" height="76" rx="5" fill="#fff" stroke="#CFE6EA" stroke-width="2"/><rect x="178" y="56" width="44" height="7" rx="3" fill="#7DDDD2"/><rect x="178" y="69" width="44" height="7" rx="3" fill="#C8F27A"/><rect x="178" y="82" width="30" height="7" rx="3" fill="#FFE95C"/><g transform="translate(120,160) scale(1.05)"><use href="#girl-phone"/></g><g transform="translate(225,165) scale(1.0)"><use href="#boy-cam"/></g></svg>
+        </div>
+      </div>
+      <div class="flow-card">
+        <div class="flow-head"><div class="flow-step en">STEP 04</div><h3>中間レビュー</h3></div>
+        <p>メンターや関係者からフィードバックを受け、内容をブラッシュアップします。</p>
+        <div class="flow-thumb">
+          <svg viewBox="0 0 320 200"><rect width="320" height="200" fill="url(#room)"/><g transform="translate(90,140) scale(1.1)"><use href="#adult"/></g><g transform="translate(190,150) scale(1.0)"><use href="#girl-st"/></g><g transform="translate(255,155) scale(.95)"><use href="#boy-cam"/></g><g transform="translate(150,55)"><path d="M-30 0 Q-30 -22 0 -22 Q30 -22 30 0 Q30 16 6 16 L-4 26 L-2 16 Q-30 16 -30 0Z" fill="#fff" stroke="#7DDDD2" stroke-width="2.5"/><path d="M-12 -4 l6 7 12 -13" stroke="#3BB8C7" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
+        </div>
+      </div>
+      <div class="flow-card">
+        <div class="flow-head"><div class="flow-step en">STEP 05</div><h3>成果発表</h3></div>
+        <p>制作物や提案内容を発表し、想いを伝えます。</p>
+        <div class="flow-thumb">
+          <svg viewBox="0 0 320 200"><rect width="320" height="200" fill="url(#room)"/><rect x="40" y="30" width="150" height="90" rx="8" fill="#3BB8C7"/><rect x="52" y="44" width="80" height="10" rx="4" fill="#fff" opacity=".9"/><rect x="52" y="62" width="110" height="8" rx="4" fill="#fff" opacity=".6"/><rect x="52" y="78" width="96" height="8" rx="4" fill="#fff" opacity=".6"/><g transform="translate(240,145) scale(1.15)"><use href="#girl-st"/></g><path d="M222 70 q-8 -12 4 -18" stroke="#FFB547" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+      <div class="flow-card">
+        <div class="flow-head"><div class="flow-step en">STEP 06</div><h3>成果公開</h3></div>
+        <p>LPやWEBなどで成果を広く発信します。</p>
+        <div class="flow-thumb">
+          <svg viewBox="0 0 320 200"><rect width="320" height="200" fill="url(#room)"/><rect x="80" y="36" width="160" height="100" rx="8" fill="#fff" stroke="#CFE6EA" stroke-width="2.5"/><rect x="80" y="36" width="160" height="22" rx="8" fill="#7DDDD2"/><circle cx="94" cy="47" r="3.5" fill="#fff"/><circle cx="106" cy="47" r="3.5" fill="#fff"/><rect x="94" y="68" width="60" height="40" rx="4" fill="#C9F3EF"/><path d="M117 82 l12 7 -12 7Z" fill="#1E9AAB"/><rect x="164" y="68" width="62" height="8" rx="3" fill="#C8F27A"/><rect x="164" y="82" width="50" height="8" rx="3" fill="#FFE95C"/><rect x="164" y="96" width="56" height="8" rx="3" fill="#C9F3EF"/><g transform="translate(160,178) scale(.78)"><use href="#boy-cam"/></g></svg>
         </div>
       </div>
     </div>
-    <p class="arch-note">※ 活動記録はプログラム開始後、順次公開していきます。年度別アーカイブとして蓄積されます。</p>
   </div>
 </section>
 
-<!-- SECTION 09: MENTOR -->
-<section class="mentor">
+<!-- ===== 活動記録 ===== -->
+<section style="padding:40px 0" id="archive">
+  <div class="archive">
+    <div class="archive-inner">
+      <div class="reveal">
+        <h2>活動記録</h2>
+        <p class="lead-s">仲間とつくる、かけがえのない記録。</p>
+        <p class="desc">活動の様子や気づき、インタビュー、制作物などを記録として残します。あとから見返すことで、自分たちの成長や学びを実感できます。</p>
+        <a href="#archive" class="btn btn-white">活動記録を見る →</a>
+      </div>
+      <div class="arch-cards reveal">
+        <div class="arch-card">
+          <div class="arch-meta">
+            <div class="arch-date en">COMING SOON</div>
+            <h3>キックオフレポート</h3>
+            <div class="arch-tags">#キックオフ #チームビルド</div>
+          </div>
+          <div class="arch-thumb"><svg viewBox="0 0 320 200"><rect width="320" height="200" fill="url(#room)"/><g transform="translate(90,140) scale(1.1)"><use href="#girl-st"/></g><g transform="translate(175,150) scale(1.05)"><use href="#boy-cam"/></g><g transform="translate(250,142) scale(1.0)"><use href="#girl-phone"/></g><circle cx="60" cy="50" r="16" fill="#FFE95C" opacity=".7"/></svg></div>
+        </div>
+        <div class="arch-card">
+          <div class="arch-meta">
+            <div class="arch-date en">COMING SOON</div>
+            <h3>現地でインタビュー！</h3>
+            <div class="arch-tags">#フィールドワーク #インタビュー</div>
+          </div>
+          <div class="arch-thumb"><svg viewBox="0 0 320 200"><rect width="320" height="200" fill="url(#sky)"/><path d="M0 150 Q150 120 320 145 L320 200 L0 200Z" fill="url(#grass)"/><g transform="translate(110,140) scale(1.1)"><use href="#boy-cam"/></g><g transform="translate(215,148) scale(1.05)"><use href="#adult"/></g><path d="M158 80 q10 -14 22 -4" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/></svg></div>
+        </div>
+        <div class="arch-card">
+          <div class="arch-meta">
+            <div class="arch-date en">COMING SOON</div>
+            <h3>動画制作ワークショップ</h3>
+            <div class="arch-tags">#制作 #動画編集 #ワークショップ</div>
+          </div>
+          <div class="arch-thumb"><svg viewBox="0 0 320 200"><rect width="320" height="200" fill="url(#room)"/><rect x="70" y="42" width="100" height="64" rx="6" fill="#22454C"/><rect x="78" y="50" width="84" height="48" rx="3" fill="#7DDDD2"/><path d="M108 66 l16 9 -16 9Z" fill="#fff"/><g transform="translate(130,165) scale(1.05)"><use href="#girl-phone"/></g><g transform="translate(220,158) scale(1.05)"><use href="#boy-cam"/></g></svg></div>
+        </div>
+        <div class="arch-card">
+          <div class="arch-meta">
+            <div class="arch-date en">COMING SOON</div>
+            <h3>中間レビューを実施</h3>
+            <div class="arch-tags">#レビュー #フィードバック</div>
+          </div>
+          <div class="arch-thumb"><svg viewBox="0 0 320 200"><rect width="320" height="200" fill="url(#room)"/><g transform="translate(95,145) scale(1.1)"><use href="#adult"/></g><g transform="translate(200,152) scale(1.0)"><use href="#girl-st"/></g><g transform="translate(150,55)"><path d="M-26 0 Q-26 -18 0 -18 Q26 -18 26 0 Q26 13 5 13 L-3 22 L-1 13 Q-26 13 -26 0Z" fill="#fff" stroke="#7DDDD2" stroke-width="2.5"/></g></svg></div>
+        </div>
+        <div class="archive-foot"><a href="#archive">すべての記録を見る →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== フィールド & 成果 ===== -->
+<section class="fieldout" id="field">
   <div class="wrap">
-    <div class="reveal">
-      <span class="sec-label en">Mentor / Support</span>
-      <h2 class="sec-title">プロと一緒に、考えて、つくる。</h2>
-      <p class="sec-lead">地域や事業づくりに詳しいメンター、動画・デザイン・広報の専門スタッフが、高校生の活動をサポートします。「何を伝えるか」から、「どう見せるか」まで、チームで一緒に考えていきます。</p>
-    </div>
-    <div class="mentor-grid reveal">
-      <div class="mentor-card">
-        <div class="mentor-avatar">🧭</div>
-        <h3>地域伴走メンター</h3>
-        <p>浜通りで活動する起業家・地域プレイヤーが、課題発見から提案まで伴走します。</p>
+    <div class="fo-grid">
+      <div class="reveal">
+        <h2 class="sec-title"><span class="tealed">フィールド</span>は、浜通り。</h2>
+        <p class="sec-lead">ロボット、ドローン、エネルギー、農林水産業、まちづくり、起業。イノベ地域には、これからの福島をつくる現場があります。<br><br>
+        現地でしか聞けない話、会ってみないと分からない仕事、高校生だからこそ見つけられる視点を、自分たちの言葉で記録していきます。</p>
+        <div class="field-map">
+          <!-- 手描き風 浜通りマップ -->
+          <svg class="map-shape" viewBox="0 0 460 380" preserveAspectRatio="xMidYMid slice">
+            <path d="M150 20 Q120 60 130 110 Q138 150 120 190 Q100 235 118 280 Q132 320 110 360 L40 380 L0 380 L0 0 L160 0 Z" fill="#DCF2E4" opacity=".8"/>
+            <path d="M150 20 Q120 60 130 110 Q138 150 120 190 Q100 235 118 280 Q132 320 110 360" fill="none" stroke="#8FD85A" stroke-width="3" stroke-dasharray="8 6" stroke-linecap="round"/>
+            <path d="M310 0 Q330 60 322 130 Q316 200 330 270 Q338 320 330 380" fill="none" stroke="#3BB8C7" stroke-width="3.5" stroke-linecap="round" opacity=".5"/>
+            <path d="M330 0 L460 0 L460 380 L335 380 Q345 320 336 270 Q322 200 328 130 Q336 60 316 0 Z" fill="#C9EDF3" opacity=".7"/>
+            <path d="M355 70 q9 -8 18 0 q9 -8 18 0" stroke="#3BB8C7" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".6"/>
+            <path d="M370 180 q9 -8 18 0 q9 -8 18 0" stroke="#3BB8C7" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".6"/>
+            <path d="M360 300 q9 -8 18 0 q9 -8 18 0" stroke="#3BB8C7" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".6"/>
+            <path d="M195 95 l4 12 12 4 -12 4 -4 12 -4 -12 -12 -4 12 -4Z" fill="#FFE95C"/>
+          </svg>
+          <span class="area-pin" style="top:8%;right:14%"><span class="d"></span>相馬エリア</span>
+          <span class="area-pin" style="top:24%;right:8%"><span class="d"></span>南相馬エリア</span>
+          <span class="area-pin" style="top:42%;right:16%"><span class="d"></span>双葉エリア</span>
+          <span class="area-pin" style="top:58%;right:7%"><span class="d"></span>大熊・富岡エリア</span>
+          <span class="area-pin" style="top:73%;right:18%"><span class="d"></span>川内・楢葉エリア</span>
+          <span class="area-pin" style="bottom:6%;right:9%"><span class="d"></span>広野・いわきエリア</span>
+        </div>
       </div>
-      <div class="mentor-card">
-        <div class="mentor-avatar">🎬</div>
-        <h3>制作メンター</h3>
-        <p>映像・デザイン・写真のプロクリエイターが、制作の基礎から表現まで指導します。</p>
-      </div>
-      <div class="mentor-card">
-        <div class="mentor-avatar">📣</div>
-        <h3>広報メンター</h3>
-        <p>広告・SNS運用の専門スタッフが、「届く発信」のつくり方をサポートします。</p>
+      <div class="reveal">
+        <h2 class="sec-title">つくった成果は、<span class="tealed">社会に届ける</span>。</h2>
+        <p class="sec-lead">高校生の視点で見つけた地域の魅力や課題を、発表や、WEB・SNSを通じて多くの人に届けます。</p>
+        <div class="mock-grid">
+          <div class="mock"><div class="mthumb"><svg viewBox="0 0 200 156"><rect width="200" height="156" fill="#D9F3F2"/><rect x="70" y="14" width="60" height="120" rx="10" fill="#22454C"/><rect x="76" y="22" width="48" height="104" rx="5" fill="#7DDDD2"/><path d="M93 64 l18 10 -18 10Z" fill="#fff"/></svg></div><h3>ショート動画</h3></div>
+          <div class="mock"><div class="mthumb"><svg viewBox="0 0 200 156"><rect width="200" height="156" fill="#EAF8DC"/><rect x="36" y="22" width="128" height="112" rx="8" fill="#fff"/><rect x="48" y="36" width="104" height="34" rx="4" fill="#C9F3EF"/><rect x="48" y="80" width="104" height="7" rx="3" fill="#D6E4E8"/><rect x="48" y="94" width="88" height="7" rx="3" fill="#D6E4E8"/><rect x="48" y="108" width="96" height="7" rx="3" fill="#D6E4E8"/></svg></div><h3>インタビュー記事</h3></div>
+          <div class="mock"><div class="mthumb"><svg viewBox="0 0 200 156"><rect width="200" height="156" fill="#FFF6D9"/><rect x="70" y="14" width="60" height="120" rx="10" fill="#22454C"/><rect x="76" y="22" width="48" height="104" rx="5" fill="#fff"/><rect x="80" y="28" width="40" height="40" rx="4" fill="#C8F27A"/><circle cx="86" cy="78" r="4" fill="#FF7A59"/><rect x="94" y="74" width="22" height="7" rx="3" fill="#D6E4E8"/><rect x="80" y="90" width="36" height="6" rx="3" fill="#D6E4E8"/></svg></div><h3>SNS投稿</h3></div>
+          <div class="mock"><div class="mthumb"><svg viewBox="0 0 200 156"><rect width="200" height="156" fill="#FFE9E0"/><rect x="56" y="14" width="88" height="124" rx="6" fill="#fff"/><rect x="66" y="26" width="68" height="48" rx="4" fill="#7DDDD2"/><rect x="66" y="84" width="68" height="10" rx="4" fill="#FFB547"/><rect x="66" y="102" width="52" height="7" rx="3" fill="#D6E4E8"/><rect x="66" y="115" width="60" height="7" rx="3" fill="#D6E4E8"/></svg></div><h3>ポスター・チラシ</h3></div>
+          <div class="mock"><div class="mthumb"><svg viewBox="0 0 200 156"><rect width="200" height="156" fill="#D9F3F2"/><rect x="40" y="28" width="120" height="84" rx="8" fill="#fff"/><circle cx="74" cy="62" r="16" fill="#FFE95C"/><path d="M70 56 Q74 50 78 56 Q82 62 74 66 Q66 62 70 56" fill="#FFB547"/><rect x="100" y="48" width="46" height="8" rx="3" fill="#C8F27A"/><rect x="100" y="62" width="38" height="8" rx="3" fill="#C9F3EF"/><rect x="56" y="88" width="88" height="8" rx="3" fill="#D6E4E8"/></svg></div><h3>課題解決アイデア</h3></div>
+          <div class="mock"><div class="mthumb"><svg viewBox="0 0 200 156"><rect width="200" height="156" fill="#EAF8DC"/><rect x="40" y="30" width="120" height="80" rx="6" fill="#3BB8C7"/><rect x="52" y="44" width="64" height="9" rx="4" fill="#fff" opacity=".9"/><rect x="52" y="60" width="88" height="7" rx="3" fill="#fff" opacity=".6"/><rect x="52" y="74" width="76" height="7" rx="3" fill="#fff" opacity=".6"/><rect x="86" y="112" width="28" height="14" rx="3" fill="#22454C"/></svg></div><h3>発表資料・提案書</h3></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SECTION 10: SCHEDULE -->
-<section class="schedule">
+<!-- ===== メンター & お知らせ ===== -->
+<section class="duo" id="mentor">
   <div class="wrap">
-    <div class="reveal">
-      <span class="sec-label en">Schedule</span>
-      <h2 class="sec-title">スケジュール</h2>
-    </div>
-    <div class="sch-track reveal">
-      <div class="sch-item"><div class="ico">🚀</div><h3>キックオフ</h3><div class="when">予定</div></div>
-      <div class="sch-item"><div class="ico">🗺️</div><h3>現地フィールドワーク</h3><div class="when">調整中</div></div>
-      <div class="sch-item"><div class="ico">🛠️</div><h3>制作ワーク</h3><div class="when">予定</div></div>
-      <div class="sch-item"><div class="ico">👀</div><h3>中間レビュー</h3><div class="when">予定</div></div>
-      <div class="sch-item"><div class="ico">🎤</div><h3>成果発表会</h3><div class="when">予定</div></div>
-      <div class="sch-item"><div class="ico">🌐</div><h3>成果公開</h3><div class="when">予定</div></div>
-      <div class="sch-item"><div class="ico">📚</div><h3>活動記録公開</h3><div class="when">順次</div></div>
+    <div class="duo-grid">
+      <div class="reveal">
+        <h2 class="sec-title">プロと一緒に、<span class="tealed">考えて、つくる</span>。</h2>
+        <p class="sec-lead">地域や事業づくりに詳しいメンター、動画・デザイン・広報の専門スタッフが高校生の活動をサポートします。</p>
+        <div class="mentor-grid">
+          <div class="mentor-card">
+            <div class="mentor-avatar"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#D9F3F2"/><g transform="translate(50,62) scale(1.7)"><use href="#adult"/></g></svg></div>
+            <h3>地域伴走メンター</h3><p>地域の企業や自治体と一緒に伴走します</p>
+          </div>
+          <div class="mentor-card">
+            <div class="mentor-avatar"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#EAF8DC"/><g transform="translate(50,62) scale(1.7)"><use href="#boy-cam"/></g></svg></div>
+            <h3>制作メンター</h3><p>動画・写真・デザインなど制作をサポート</p>
+          </div>
+          <div class="mentor-card">
+            <div class="mentor-avatar"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#FFF6D9"/><g transform="translate(50,62) scale(1.7)"><use href="#girl-st"/></g></svg></div>
+            <h3>広報メンター</h3><p>伝える視点や見せ方を一緒に考えます</p>
+          </div>
+          <div class="mentor-card">
+            <div class="mentor-avatar"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#FFE9E0"/><g transform="translate(50,62) scale(1.7)"><use href="#girl-phone"/></g></svg></div>
+            <h3>課題解決メンター</h3><p>課題整理やアイデア提案をサポート</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" id="news">
+        <div class="news-box">
+          <h2>お知らせ</h2>
+          <ul class="news-list">
+            <li><span class="news-date en">COMING SOON</span><span>プログラムの最新情報はこちらに掲載します<span class="news-new">NEW</span></span></li>
+            <li><span class="news-date en">—</span><span>キックオフのお知らせ（予定）</span></li>
+            <li><span class="news-date en">—</span><span>フィールドワークの記録を公開（予定）</span></li>
+            <li><span class="news-date en">—</span><span>成果発表会のご案内（予定）</span></li>
+          </ul>
+          <div class="news-more"><a href="#news">すべてのお知らせを見る →</a></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SECTION 11: FAQ -->
+<!-- ===== FAQ ===== -->
 <section class="faq" id="faq">
   <div class="wrap">
-    <div class="reveal">
-      <span class="sec-label en">FAQ</span>
-      <h2 class="sec-title">よくある質問</h2>
-    </div>
+    <h2 class="sec-title reveal">よくある質問</h2>
     <div class="faq-list reveal">
       <details class="faq-item">
         <summary><span class="faq-q">Q</span>動画やデザインの経験がなくても参加できますか？</summary>
@@ -725,29 +721,33 @@ footer .foot-logo{font-weight:800;color:#fff;font-size:16px;margin-bottom:10px}
   </div>
 </section>
 
-<!-- BOTTOM CTA -->
-<section class="bottom-cta">
-  <h2>未来は、教室の外にある。</h2>
-  <p>イノベ フィールド キャンプの活動の軌跡を、これから記録していきます。</p>
-  <a href="#archive" class="btn">活動記録を見る →</a>
-</section>
-
 <footer>
-  <div class="foot-logo">⛺ イノベ フィールド キャンプ</div>
-  <p>地域若年層によるイノベ構想理解促進に向けた広報コンテンツ制作・課題解決力育成支援業務</p>
-  <p style="margin-top:8px;opacity:.6">© INNOVE FIELD CAMP</p>
+  <div class="foot-inner">
+    <div class="foot-logo"><img src="assets/logo.png" alt="イノベ フィールド キャンプ"></div>
+    <ul class="foot-nav">
+      <li><a href="#programs">プログラムについて</a></li>
+      <li><a href="#flow">活動の流れ</a></li>
+      <li><a href="#archive">活動記録</a></li>
+      <li><a href="#field">フィールド</a></li>
+      <li><a href="#mentor">メンター</a></li>
+      <li><a href="#news">お知らせ</a></li>
+      <li><a href="#faq">よくある質問</a></li>
+    </ul>
+    <div class="foot-sns">
+      <a href="#" aria-label="Instagram">◎</a>
+      <a href="#" aria-label="X">𝕏</a>
+      <a href="#" aria-label="YouTube">▶</a>
+    </div>
+    <div class="foot-copy">地域若年層によるイノベ構想理解促進に向けた広報コンテンツ制作・課題解決力育成支援業務<br>© INNOVE FIELD CAMP</div>
+  </div>
 </footer>
 
-<!-- モバイル固定CTA -->
-<div class="fixed-cta">
-  <a href="#archive">📚 活動記録を見る</a>
-</div>
+<div class="fixed-cta"><a href="#archive">📚 活動記録を見る</a></div>
 
 <script>
-// スクロールリビール
 const io = new IntersectionObserver(entries=>{
   entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} });
-},{threshold:.12});
+},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 </body>
