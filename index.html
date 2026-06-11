@@ -533,6 +533,41 @@ header.scrolled .nav-logo img{height:42px}
 .news .btn-line:hover{color:var(--mint);border-color:var(--mint)}
 @media(max-width:780px){.news-flex{grid-template-columns:1fr}}
 
+/* ============ ABOUT INNOVE ============ */
+.innove{
+  padding:clamp(100px,14vh,160px) 0;
+  background:
+    radial-gradient(ellipse 700px 460px at 8% 100%,rgba(143,216,90,.14),transparent 60%),
+    var(--paper-warm);
+}
+.innove-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,6vw,84px);align-items:center}
+.innove-host{
+  margin-top:34px;padding:22px 26px;background:#fff;border:1px solid var(--ink-12);
+  border-radius:16px;display:inline-flex;align-items:center;gap:22px;flex-wrap:wrap;
+}
+.host-label{font-size:10px;font-weight:700;letter-spacing:.26em;color:var(--ink-30);flex-shrink:0}
+.host-logo{display:block}
+.host-logo img{height:17px;width:auto;transition:opacity .3s}
+.host-logo:hover img{opacity:.7}
+.innove-facts{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fact-card{
+  background:#fff;border:1px solid var(--ink-12);border-radius:20px;
+  padding:30px 26px;transition:transform .4s var(--ease),box-shadow .4s,border-color .4s;
+}
+.fact-card:hover{transform:translateY(-6px);border-color:var(--teal);box-shadow:0 18px 40px rgba(14,140,156,.12)}
+.fact-wide{grid-column:1/-1}
+.fact-k{font-family:'Outfit',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.26em;color:var(--teal-deep);margin-bottom:10px}
+.fact-v{
+  font-family:'Outfit','Zen Kaku Gothic New',sans-serif;font-weight:800;
+  font-size:clamp(34px,4vw,48px);line-height:1.1;letter-spacing:.02em;
+  background:linear-gradient(120deg,var(--teal-deep),var(--teal) 55%,var(--leaf-deep));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-bottom:10px;
+}
+.fact-v span{font-size:15px;font-weight:900;letter-spacing:.06em}
+.fact-d{font-size:12px;color:var(--ink-60);line-height:1.9}
+@media(max-width:860px){.innove-grid{grid-template-columns:1fr}}
+
 /* ============ FAQ ============ */
 .faq{padding:clamp(100px,14vh,160px) 0}
 .faq-wrap{max-width:780px;margin:54px auto 0}
@@ -598,9 +633,12 @@ footer{background:var(--ink);color:rgba(251,253,253,.6);padding:64px 0 40px}
 .foot-sns a:hover{background:var(--teal);border-color:var(--teal)}
 .foot-base{
   margin-top:44px;padding-top:26px;border-top:1px solid rgba(255,255,255,.1);
-  display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;
-  font-size:11px;letter-spacing:.05em;opacity:.55;
+  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;
+  font-size:11px;letter-spacing:.05em;opacity:.7;
 }
+.foot-host{display:inline-flex;align-items:center;gap:14px}
+.foot-host img{height:14px;width:auto;filter:brightness(0) invert(1);opacity:.8;transition:opacity .3s}
+.foot-host a:hover img{opacity:1}
 
 /* ============ FIXED CTA (mobile) ============ */
 .fixed-cta{position:fixed;bottom:14px;left:14px;right:14px;z-index:90;display:none}
@@ -1038,11 +1076,50 @@ footer{background:var(--ink);color:rgba(251,253,253,.6);padding:64px 0 40px}
   </div>
 </section>
 
+<!-- ============ ABOUT INNOVE ============ -->
+<section class="innove" id="innove">
+  <div class="container">
+    <div class="innove-grid">
+      <div class="rv">
+        <p class="sec-index en">08 — ABOUT</p>
+        <h2 class="sec-en">What is <span class="o">"INNOVE"</span>?</h2>
+        <p class="sec-ja">福島イノベとは？</p>
+        <p class="sec-desc">「福島イノベーション・コースト構想」は、東日本大震災及び原子力災害によって失われた浜通り地域等の産業を回復するため、新たな産業基盤の構築を目指す国家プロジェクト。ロボット・ドローン、エネルギー、農林水産業など、世界の最先端に挑む現場が、福島・浜通りに集まっています。</p>
+        <p class="sec-desc" style="margin-top:10px">本プログラムは、公益財団法人 福島イノベーション・コースト構想推進機構の事業として実施されます。</p>
+        <div class="innove-host rv rv-d2">
+          <span class="host-label en">HOSTED BY</span>
+          <a href="https://www.fipo.or.jp/" target="_blank" rel="noopener" class="host-logo">
+            <img src="assets/fipo-logo.svg" alt="福島イノベーション・コースト構想推進機構">
+          </a>
+        </div>
+        <a href="https://www.fipo.or.jp/" target="_blank" rel="noopener" class="btn-line en" style="margin-top:26px">OFFICIAL SITE <span>↗</span></a>
+      </div>
+      <div class="innove-facts rv rv-d2">
+        <div class="fact-card">
+          <p class="fact-k en">FIELDS</p>
+          <p class="fact-v">６<span>分野</span></p>
+          <p class="fact-d">廃炉／ロボット・ドローン／エネルギー・環境・リサイクル／農林水産業／医療関連／航空宇宙</p>
+        </div>
+        <div class="fact-card">
+          <p class="fact-k en">AREA</p>
+          <p class="fact-v">15<span>市町村</span></p>
+          <p class="fact-d">浜通り地域等の15市町村がプロジェクトの対象エリア</p>
+        </div>
+        <div class="fact-card fact-wide">
+          <p class="fact-k en">CHALLENGE</p>
+          <p class="fact-v">世界<span>の最先端へ</span></p>
+          <p class="fact-d">福島ロボットテストフィールドをはじめ、世界に誇る研究・実証の拠点が集積。挑戦する企業・起業家が集まり続けています</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FAQ ============ -->
 <section class="faq" id="faq">
   <div class="container">
     <div class="rv" style="text-align:center">
-      <p class="sec-index en" style="justify-content:center;display:inline-flex">08 — FAQ</p>
+      <p class="sec-index en" style="justify-content:center;display:inline-flex">09 — FAQ</p>
       <h2 class="sec-en">Q <span class="o">&amp;</span> A</h2>
       <p class="sec-ja">よくある質問</p>
     </div>
@@ -1091,6 +1168,7 @@ footer{background:var(--ink);color:rgba(251,253,253,.6);padding:64px 0 40px}
         <li><a href="#field">フィールド</a></li>
         <li><a href="#mentor">メンター</a></li>
         <li><a href="#news">お知らせ</a></li>
+        <li><a href="#innove">福島イノベとは</a></li>
         <li><a href="#faq">よくある質問</a></li>
         <li><a href="#members">参加者の方へ</a></li>
       </ul>
@@ -1100,6 +1178,10 @@ footer{background:var(--ink);color:rgba(251,253,253,.6);padding:64px 0 40px}
         <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 7.2a3.02 3.02 0 00-2.12-2.14C19.5 4.55 12 4.55 12 4.55s-7.5 0-9.38.51A3.02 3.02 0 00.5 7.2 31.6 31.6 0 000 12c0 1.62.17 3.23.5 4.8a3.02 3.02 0 002.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 002.12-2.14c.33-1.57.5-3.18.5-4.8a31.6 31.6 0 00-.5-4.8zM9.6 15.6V8.4l6.27 3.6L9.6 15.6z"/></svg></a>
       </div>
       <div class="foot-base">
+        <span class="foot-host">
+          <span class="en" style="letter-spacing:.22em;font-size:9.5px;opacity:.7">HOSTED BY</span>
+          <a href="https://www.fipo.or.jp/" target="_blank" rel="noopener"><img src="assets/fipo-logo.svg" alt="福島イノベーション・コースト構想推進機構"></a>
+        </span>
         <span>地域若年層によるイノベ構想理解促進に向けた広報コンテンツ制作・課題解決力育成支援業務</span>
         <span class="en">© INNOVE FIELD CAMP</span>
       </div>
