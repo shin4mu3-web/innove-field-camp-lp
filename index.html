@@ -95,14 +95,11 @@ header{
 }
 header.scrolled{background:rgba(251,253,253,.92);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--ink-12)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:76px;max-width:1320px;margin:0 auto;padding:0 clamp(18px,3vw,36px)}
-.nav-brand{display:flex;align-items:center;gap:18px;min-width:0}
-.nav-logo img{height:50px;width:auto;transition:height .35s}
-header.scrolled .nav-logo img{height:42px}
-.nav-divider{width:1px;height:30px;background:var(--ink-12);flex-shrink:0}
+.nav-brand{display:flex;align-items:center;min-width:0}
 .nav-fipo{display:block;min-width:0}
-.nav-fipo img{height:13px;width:auto;max-width:200px;opacity:.85;transition:opacity .3s}
+.nav-fipo img{height:16px;width:auto;max-width:min(64vw,260px);opacity:.92;transition:opacity .3s,height .35s}
 .nav-fipo:hover img{opacity:1}
-@media(max-width:640px){.nav-divider,.nav-fipo{display:none}}
+header.scrolled .nav-fipo img{height:14px}
 .nav-menu{display:flex;align-items:center;gap:30px;list-style:none}
 .nav-menu a{
   font-family:'Outfit',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.12em;
@@ -540,36 +537,48 @@ header.scrolled .nav-logo img{height:42px}
 @media(max-width:780px){.news-flex{grid-template-columns:1fr}}
 
 /* ============ ABOUT INNOVE ============ */
+:root{
+  --fipo-blue:#4793C9;
+  --fipo-navy:#566BAB;
+  --fipo-deep:#33568C;
+}
 .innove{
   padding:clamp(100px,14vh,160px) 0;
   background:
-    radial-gradient(ellipse 700px 460px at 8% 100%,rgba(143,216,90,.14),transparent 60%),
-    var(--paper-warm);
+    radial-gradient(ellipse 700px 460px at 8% 100%,rgba(71,147,201,.1),transparent 60%),
+    radial-gradient(ellipse 600px 420px at 92% 0%,rgba(86,107,171,.08),transparent 60%),
+    #F2F7FB;
 }
+.innove .sec-index{color:var(--fipo-deep)}
+.innove .sec-index::after{background:var(--fipo-blue)}
+.innove .sec-en .o{-webkit-text-stroke-color:var(--fipo-blue)}
 .innove-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,6vw,84px);align-items:center}
 .innove-host{
-  margin-top:34px;padding:22px 26px;background:#fff;border:1px solid var(--ink-12);
+  margin-top:34px;padding:22px 26px;background:#fff;border:1px solid rgba(86,107,171,.18);
   border-radius:16px;display:inline-flex;align-items:center;gap:22px;flex-wrap:wrap;
 }
+.innove .btn-line:hover{color:var(--fipo-deep);border-color:var(--fipo-deep)}
 .host-label{font-size:10px;font-weight:700;letter-spacing:.26em;color:var(--ink-30);flex-shrink:0}
 .host-logo{display:block}
 .host-logo img{height:17px;width:auto;transition:opacity .3s}
 .host-logo:hover img{opacity:.7}
 .innove-facts{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .fact-card{
-  background:#fff;border:1px solid var(--ink-12);border-radius:20px;
+  background:#fff;border:1px solid rgba(86,107,171,.18);border-radius:20px;
   padding:30px 26px;transition:transform .4s var(--ease),box-shadow .4s,border-color .4s;
 }
-.fact-card:hover{transform:translateY(-6px);border-color:var(--teal);box-shadow:0 18px 40px rgba(14,140,156,.12)}
+.fact-card:hover{transform:translateY(-6px);border-color:var(--fipo-blue);box-shadow:0 18px 40px rgba(71,147,201,.16)}
 .fact-wide{grid-column:1/-1}
-.fact-k{font-family:'Outfit',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.26em;color:var(--teal-deep);margin-bottom:10px}
+.fact-k{font-family:'Outfit',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.26em;color:var(--fipo-blue);margin-bottom:10px}
 .fact-v{
   font-family:'Outfit','Zen Kaku Gothic New',sans-serif;font-weight:800;
   font-size:clamp(34px,4vw,48px);line-height:1.1;letter-spacing:.02em;
-  background:linear-gradient(120deg,var(--teal-deep),var(--teal) 55%,var(--leaf-deep));
+  background:linear-gradient(120deg,var(--fipo-deep),var(--fipo-blue) 60%,#6CB2BB);
   -webkit-background-clip:text;background-clip:text;color:transparent;
   margin-bottom:10px;
 }
+.field-dots{display:flex;gap:7px;margin-top:14px}
+.field-dots i{width:11px;height:11px;border-radius:50%;display:block}
 .fact-v span{font-size:15px;font-weight:900;letter-spacing:.06em}
 .fact-d{font-size:12px;color:var(--ink-60);line-height:1.9}
 @media(max-width:860px){.innove-grid{grid-template-columns:1fr}}
@@ -665,9 +674,7 @@ footer{background:var(--ink);color:rgba(251,253,253,.6);padding:64px 0 40px}
 <header id="hd">
   <nav class="nav">
     <div class="nav-brand">
-      <a href="#top" class="nav-logo"><img src="assets/logo.png" alt="イノベ フィールド キャンプ"></a>
-      <span class="nav-divider"></span>
-      <a href="https://www.fipo.or.jp/" target="_blank" rel="noopener" class="nav-fipo" title="福島イノベーション・コースト構想推進機構">
+      <a href="#top" class="nav-fipo" title="福島イノベーション・コースト構想推進機構">
         <img src="assets/fipo-logo.svg" alt="福島イノベーション・コースト構想推進機構">
       </a>
     </div>
@@ -772,6 +779,10 @@ footer{background:var(--ink);color:rgba(251,253,253,.6);padding:64px 0 40px}
           <p class="fact-k en">FIELDS</p>
           <p class="fact-v">６<span>分野</span></p>
           <p class="fact-d">廃炉／ロボット・ドローン／エネルギー・環境・リサイクル／農林水産業／医療関連／航空宇宙</p>
+          <div class="field-dots">
+            <i style="background:#4793C9"></i><i style="background:#FF6D00"></i><i style="background:#7FBD4F"></i>
+            <i style="background:#E8005E"></i><i style="background:#8C4296"></i><i style="background:#6CB2BB"></i>
+          </div>
         </div>
         <div class="fact-card">
           <p class="fact-k en">AREA</p>
