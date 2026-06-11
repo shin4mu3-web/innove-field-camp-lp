@@ -108,6 +108,13 @@ header.scrolled .nav-logo img{height:42px}
 }
 .nav-menu a:hover::after{transform:scaleX(1);transform-origin:left}
 .nav-menu .jp{display:block;font-family:'Zen Kaku Gothic New',sans-serif;font-size:10px;color:var(--ink-60);font-weight:500;letter-spacing:.06em;text-align:center}
+.nav-menu .nav-member{
+  background:var(--ink);color:#fff;border-radius:999px;padding:9px 22px;
+  transition:background .3s;
+}
+.nav-menu .nav-member .jp{color:rgba(255,255,255,.7)}
+.nav-menu .nav-member::after{display:none}
+.nav-menu .nav-member:hover{background:var(--teal-deep)}
 @media(max-width:960px){.nav-menu{display:none}}
 
 /* ============ HERO ============ */
@@ -139,8 +146,8 @@ header.scrolled .nav-logo img{height:42px}
 }
 .hero-eyebrow::before{content:"";width:42px;height:1px;background:var(--teal-deep)}
 .hero-title{
-  font-size:clamp(44px,7.4vw,104px);font-weight:900;line-height:1.22;
-  letter-spacing:.02em;margin-bottom:34px;
+  font-size:clamp(34px,6.2vw,88px);font-weight:900;line-height:1.3;
+  letter-spacing:.02em;margin-bottom:34px;white-space:nowrap;
 }
 .hero-title .t-teal{
   background:linear-gradient(120deg,var(--teal-deep),var(--teal) 60%,var(--leaf-deep));
@@ -158,6 +165,43 @@ header.scrolled .nav-logo img{height:42px}
 .hero-data{
   display:flex;gap:0;opacity:0;animation:fadeup 1s var(--ease) .75s forwards;flex-wrap:wrap;
 }
+.hero-actions{
+  display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;
+  opacity:0;animation:fadeup 1s var(--ease) .65s forwards;
+}
+.btn-member{
+  display:inline-flex;align-items:center;gap:12px;text-decoration:none;
+  background:var(--ink);color:#fff;border-radius:999px;
+  font-weight:800;font-size:14px;letter-spacing:.06em;
+  padding:16px 34px;transition:transform .35s var(--ease),box-shadow .35s,background .35s;
+}
+.btn-member:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(14,42,48,.28);background:var(--teal-deep)}
+.btn-member .en-s{font-family:'Outfit',sans-serif;font-size:10px;font-weight:700;letter-spacing:.26em;opacity:.65}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+  border:1.5px solid var(--ink);color:var(--ink);border-radius:999px;
+  font-weight:800;font-size:14px;letter-spacing:.06em;
+  padding:16px 32px;transition:background .35s,color .35s,transform .35s var(--ease);
+}
+.btn-ghost:hover{background:var(--ink);color:#fff;transform:translateY(-3px)}
+/* — 最新お知らせバー — */
+.hero-news{
+  display:inline-flex;align-items:center;gap:0;margin-bottom:26px;max-width:100%;
+  background:#fff;border:1px solid var(--ink-12);border-radius:999px;
+  box-shadow:0 4px 18px rgba(14,42,48,.07);overflow:hidden;
+  opacity:0;animation:fadeup .9s var(--ease) .1s forwards;
+  text-decoration:none;transition:border-color .3s,box-shadow .3s;
+}
+.hero-news:hover{border-color:var(--teal);box-shadow:0 8px 26px rgba(14,140,156,.16)}
+.hero-news .hn-tag{
+  font-family:'Outfit',sans-serif;font-size:10px;font-weight:800;letter-spacing:.22em;
+  background:var(--teal);color:#fff;padding:9px 16px;flex-shrink:0;
+}
+.hero-news .hn-text{
+  font-size:12.5px;font-weight:700;color:var(--ink);padding:7px 18px 7px 14px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.hero-news .hn-arrow{padding-right:16px;color:var(--teal-deep);font-weight:800;flex-shrink:0}
 .hd-item{padding:6px 30px;border-left:1px solid var(--ink-12)}
 .hd-item:first-child{padding-left:0;border-left:none}
 .hd-item .k{font-family:'Outfit',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.24em;color:var(--teal-deep);text-transform:uppercase}
@@ -434,6 +478,38 @@ header.scrolled .nav-logo img{height:42px}
 .mentor-sig path{stroke:var(--ink-30);stroke-width:2;fill:none;stroke-linecap:round}
 @media(max-width:900px){.mentor-grid{grid-template-columns:repeat(2,1fr)}}
 
+/* ============ MEMBERS ============ */
+.members{padding:clamp(70px,9vh,110px) 0}
+.members-band{
+  position:relative;border-radius:28px;overflow:hidden;
+  background:
+    radial-gradient(ellipse 600px 400px at 90% -10%,rgba(125,221,210,.28),transparent 60%),
+    linear-gradient(135deg,#0F3A42,var(--ink) 70%);
+  color:var(--paper);padding:clamp(36px,5vw,60px);
+  display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,4vw,56px);align-items:center;
+}
+.members-title{font-size:clamp(24px,3.4vw,36px);font-weight:900;letter-spacing:.06em;margin:10px 0 16px}
+.members-desc{font-size:13.5px;line-height:2.2;color:rgba(251,253,253,.65)}
+.members-links{display:flex;flex-direction:column;gap:12px}
+.member-link{
+  display:flex;align-items:center;gap:18px;text-decoration:none;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);
+  border-radius:16px;padding:18px 22px;color:var(--paper);
+  transition:background .35s,border-color .35s,transform .35s var(--ease);
+}
+.member-link:hover{background:rgba(125,221,210,.14);border-color:var(--mint);transform:translateX(6px)}
+.ml-icon{
+  width:46px;height:46px;border-radius:13px;background:rgba(125,221,210,.16);
+  display:flex;align-items:center;justify-content:center;color:var(--mint);flex-shrink:0;
+}
+.ml-icon svg{width:22px;height:22px}
+.ml-body{flex:1;line-height:1.5}
+.ml-body b{display:block;font-size:14.5px;font-weight:800;letter-spacing:.04em}
+.ml-body i{font-style:normal;font-size:11.5px;color:rgba(251,253,253,.55)}
+.ml-arrow{font-weight:800;color:var(--mint)}
+.members-note{grid-column:1/-1;font-size:11.5px;color:rgba(251,253,253,.45);letter-spacing:.04em}
+@media(max-width:820px){.members-band{grid-template-columns:1fr}}
+
 /* ============ NEWS ============ */
 .news{padding:clamp(80px,11vh,130px) 0;background:var(--ink);color:var(--paper)}
 .news .sec-index{color:var(--mint)}.news .sec-index::after{background:var(--mint)}
@@ -553,6 +629,7 @@ footer{background:var(--ink);color:rgba(251,253,253,.6);padding:64px 0 40px}
       <li><a href="#mentor">MENTOR<span class="jp">メンター</span></a></li>
       <li><a href="#news">NEWS<span class="jp">お知らせ</span></a></li>
       <li><a href="#faq">FAQ<span class="jp">よくある質問</span></a></li>
+      <li><a href="#members" class="nav-member">MEMBERS<span class="jp">参加者の方へ</span></a></li>
     </ul>
   </nav>
 </header>
@@ -563,12 +640,21 @@ footer{background:var(--ink);color:rgba(251,253,253,.6);padding:64px 0 40px}
   <div class="hero-inner">
     <div class="hero-grid">
       <div>
+        <a href="#news" class="hero-news">
+          <span class="hn-tag">NEWS</span>
+          <span class="hn-text">プログラムの最新情報はこちらに掲載します</span>
+          <span class="hn-arrow">→</span>
+        </a>
         <p class="hero-eyebrow">INNOVE FIELD CAMP — FUKUSHIMA HAMADORI</p>
         <h1 class="hero-title">
           <span class="row"><span>学校の外で、</span></span>
           <span class="row"><span><span class="t-teal">未来</span>を見つける。</span></span>
         </h1>
         <p class="hero-lead">イノベ地域の企業・人・地域を取材し、高校生の視点で、動画・SNS・デザイン・提案にまとめるフィールド型クリエイティブプログラム。</p>
+        <div class="hero-actions">
+          <a href="#members" class="btn-member">参加者の方はこちら<span class="en-s">MEMBERS</span></a>
+          <a href="#archive" class="btn-ghost">活動記録を見る →</a>
+        </div>
         <div class="hero-data">
           <div class="hd-item"><div class="k en">For</div><div class="v">福島県内の高校生</div></div>
           <div class="hd-item"><div class="k en">Term</div><div class="v">調整中</div></div>
@@ -901,6 +987,37 @@ footer{background:var(--ink);color:rgba(251,253,253,.6);padding:64px 0 40px}
   </div>
 </section>
 
+<!-- ============ MEMBERS ============ -->
+<section class="members" id="members">
+  <div class="container">
+    <div class="members-band rv">
+      <div class="members-info">
+        <p class="sec-index en" style="color:var(--mint)">FOR MEMBERS</p>
+        <h2 class="members-title">参加者の方へ</h2>
+        <p class="members-desc">このサイトは、参加する高校生のみなさんとの連絡ツールも兼ねています。活動スケジュールの確認、資料の受け取り、事務局への連絡はこちらから。</p>
+      </div>
+      <div class="members-links">
+        <a href="#" class="member-link">
+          <span class="ml-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg></span>
+          <span class="ml-body"><b>活動スケジュール</b><i>日程・集合場所の確認</i></span>
+          <span class="ml-arrow">→</span>
+        </a>
+        <a href="#" class="member-link">
+          <span class="ml-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V9z"/><path d="M13 3v6h6M9.5 14h5M9.5 17h5"/></svg></span>
+          <span class="ml-body"><b>配布資料・テンプレート</b><i>ワークシート等のダウンロード</i></span>
+          <span class="ml-arrow">→</span>
+        </a>
+        <a href="#" class="member-link">
+          <span class="ml-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 01-8.5 8.5c-1.5 0-2.9-.38-4.1-1.05L3 20l1.1-5.2A8.5 8.5 0 1121 11.5z"/></svg></span>
+          <span class="ml-body"><b>事務局への連絡</b><i>質問・欠席連絡・相談はこちら</i></span>
+          <span class="ml-arrow">→</span>
+        </a>
+      </div>
+      <p class="members-note">※ 参加者専用ページのURL・アクセス方法は、キックオフ時にご案内します。</p>
+    </div>
+  </div>
+</section>
+
 <!-- ============ NEWS ============ -->
 <section class="news" id="news">
   <div class="container">
@@ -975,6 +1092,7 @@ footer{background:var(--ink);color:rgba(251,253,253,.6);padding:64px 0 40px}
         <li><a href="#mentor">メンター</a></li>
         <li><a href="#news">お知らせ</a></li>
         <li><a href="#faq">よくある質問</a></li>
+        <li><a href="#members">参加者の方へ</a></li>
       </ul>
       <div class="foot-sns">
         <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.07 3.25.15 4.77 1.7 4.92 4.92.06 1.27.07 1.65.07 4.81 0 3.17-.01 3.54-.07 4.81-.15 3.22-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.81.07-3.16 0-3.54-.01-4.8-.07-3.27-.15-4.78-1.7-4.93-4.93-.06-1.26-.07-1.64-.07-4.8 0-3.16.01-3.54.07-4.81C2.42 3.97 3.93 2.42 7.2 2.27 8.45 2.21 8.83 2.2 12 2.2zm0 3.7a6.1 6.1 0 100 12.2 6.1 6.1 0 000-12.2zm0 10.05a3.95 3.95 0 110-7.9 3.95 3.95 0 010 7.9zm6.34-11.7a1.42 1.42 0 100 2.85 1.42 1.42 0 000-2.85z"/></svg></a>
@@ -989,7 +1107,7 @@ footer{background:var(--ink);color:rgba(251,253,253,.6);padding:64px 0 40px}
   </div>
 </footer>
 
-<div class="fixed-cta"><a href="#archive">活動記録を見る →</a></div>
+<div class="fixed-cta"><a href="#members">参加者の方はこちら →</a></div>
 
 <script>
 // reveal
